@@ -1,4 +1,8 @@
-**Prabhu Raj Portfolio**
+<div align="center">
+  
+# **Prabhu Raj Portfolio**
+
+</div>
 
 <div align="center">
 
