@@ -11,6 +11,26 @@ Specializing in data visualization and predictive analytics, I’ve started appl
 
 </div>
 
+<div class="powerbi-dashboard">
+    <h3>Transmountain Expansion Dashboard</h3>
+    <iframe
+        width="800"
+        height="600"
+        src="https://app.powerbi.com/view?r=eyJrIjoiMDIwNTRhNDYtNDU0Zi00ZWVjLWI1ZWEtNjJiMmYwMzc4ZDFjIiwidCI6ImY1MmYyMTgzLTlmNjctNGFkMi1iNjU2LTZmNzU0ZmUxOTZjYiIsImMiOjZ9"
+        frameborder="0"
+        allowFullScreen="true">
+    </iframe>
+</div>
+.powerbi-dashboard {
+    margin: 20px auto;
+    text-align: center;
+}
+
+iframe {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
 <div class="project">
     <h3>Transmountain Expansion Project</h3>
     <p>This project demonstrates my work on the Transmountain Expansion project. Click below to download the files.</p>
