@@ -1,3 +1,4 @@
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,9 +63,11 @@
     </style>
 </head>
 <body>
-    
+    <p style="color: #fff; text-align: center; line-height: 1.6; margin-bottom: 20px; font-style: italic;">
+        Motivated and dedicated Implementation Manager with 8+ years of experience in driving impactful projects and solving real-world challenges. With a solid foundation in technical support and customer success, I’m now expanding my expertise into the field of data analytics. Proficient in tools like Power BI, SQL, Python, and Excel, I leverage these skills to explore data-driven insights and create effective solutions. Specializing in data visualization and predictive analytics, I’ve started applying machine learning techniques to enhance decision-making processes. Additionally, I bring strong project management, problem-solving, and client collaboration skills, ensuring seamless execution of tasks. My journey reflects a passion for continuous learning and transitioning to a career in data analytics where I can blend my experience with new-age technologies.
+    </p>
 
-    <div class="dashboard-container">
+<div class="dashboard-container">
         <img src="https://raw.githubusercontent.com/Prabhu-Raj-Samraj/PrabhuRaj-DataPortfolio/main/Dashboard%201.png" alt="Main Dashboard">
         <h4>Main Dashboard</h4>
         <p>This dashboard provides an overview of barrels produced, throughput capacity, and key trends over the years.</p>
@@ -82,3 +85,4 @@
         <p>Focused on trade insights, this dashboard visualizes export and import trends by year, product, and region.</p>
     </div>
 </body>
+</html>
