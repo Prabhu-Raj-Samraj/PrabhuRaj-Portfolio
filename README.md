@@ -82,9 +82,9 @@
 
         <h3>Transmountain Expansion Dashboards</h3>
         <div class="dashboard-images">
-            <img src="path/to/dashboard1.png" alt="Dashboard 1">
-            <img src="path/to/dashboard2.png" alt="Dashboard 2">
-            <img src="path/to/dashboard3.png" alt="Dashboard 3">
+            <img src="C:/Users/prabraj/Downloads/Dashboard 1.png" alt="Dashboard 1">
+            <img src="C:/Users/prabraj/Downloads/Dashboard 1.png" alt="Dashboard 2">
+            <img src="C:/Users/prabraj/Downloads/Dashboard 1.png" alt="Dashboard 3">
         </div>
 
         <div class="project">
