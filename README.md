@@ -58,7 +58,9 @@
             color: #ffa500;
         }
 
-        .dashboard-container p { font-size: 16px; color: #000;
+        .dashboard-container p {
+            font-size: 16px;
+            color: #000;
         }
     </style>
 </head>
@@ -74,25 +76,22 @@
         <li>TMDB Movie Analysis</li>
     </ol>
 
-<div class="dashboard-container">
+    <div class="dashboard-container">
         <img src="https://raw.githubusercontent.com/Prabhu-Raj-Samraj/PrabhuRaj-DataPortfolio/main/Dashboard%201.png" alt="Main Dashboard">
         <h4>Main Dashboard</h4>
-        <p style="color: #fff; text-align: center; line-height: 1.6; margin-bottom: 20px; font-style: italic;">
-            This dashboard provides an overview of barrels produced, throughput capacity, and key trends over the years.</p>
+        <p>This dashboard provides an overview of barrels produced, throughput capacity, and key trends over the years.</p>
     </div>
 
     <div class="dashboard-container">
         <img src="https://raw.githubusercontent.com/Prabhu-Raj-Samraj/PrabhuRaj-DataPortfolio/main/Dashboard%202.png" alt="Apportionment Dashboard">
         <h4>Apportionment Dashboard</h4>
-        <p style="color: #fff; text-align: center; line-height: 1.6; margin-bottom: 20px; font-style: italic;">
-            This dashboard highlights apportionment percentages, accepted nominations, and pipeline utilization insights.</p>
+        <p>This dashboard highlights apportionment percentages, accepted nominations, and pipeline utilization insights.</p>
     </div>
 
     <div class="dashboard-container">
         <img src="https://raw.githubusercontent.com/Prabhu-Raj-Samraj/PrabhuRaj-DataPortfolio/main/Dashboard%203.png" alt="Export and Import Dashboard">
         <h4>Export and Import Dashboard</h4>
-        <p style="color: #fff; text-align: center; line-height: 1.6; margin-bottom: 20px; font-style: italic;">
-            Focused on trade insights, this dashboard visualizes export and import trends by year, product, and region.</p>
+        <p>Focused on trade insights, this dashboard visualizes export and import trends by year, product, and region.</p>
     </div>
 </body>
 </html>
