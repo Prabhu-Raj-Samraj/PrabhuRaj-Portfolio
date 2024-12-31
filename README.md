@@ -34,17 +34,20 @@
             margin-bottom: 20px;
         }
 
-        .powerbi-dashboard {
-            text-align: center;
+        .dashboard-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
             margin: 20px 0;
         }
 
-        iframe {
-            width: 100%;
-            max-width: 800px;
-            height: 600px;
+        .dashboard-images img {
+            max-width: 100%;
+            height: auto;
             border: 2px solid #ddd;
             border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .btn {
@@ -77,13 +80,11 @@
             Motivated and dedicated Implementation Manager with 8+ years of experience in driving impactful projects and solving real-world challenges. With a solid foundation in technical support and customer success, I’m now expanding my expertise into the field of data analytics. Proficient in tools like Power BI, SQL, Python, and Excel, I leverage these skills to explore data-driven insights and create effective solutions. Specializing in data visualization and predictive analytics, I’ve started applying machine learning techniques to enhance decision-making processes. Additionally, I bring strong project management, problem-solving, and client collaboration skills, ensuring seamless execution of tasks. My journey reflects a passion for continuous learning and transitioning to a career in data analytics where I can blend my experience with new-age technologies.
         </p>
 
-        <h3>Transmountain Expansion Dashboard</h3>
-        <div class="powerbi-dashboard">
-            <iframe 
-                src="https://app.powerbi.com/view?r=eyJrIjoiMDIwNTRhNDYtNDU0Zi00ZWVjLWI1ZWEtNjJiMmYwMzc4ZDFjIiwidCI6ImY1MmYyMTgzLTlmNjctNGFkMi1iNjU2LTZmNzU0ZmUxOTZjYiIsImMiOjZ9" 
-                frameborder="0" 
-                allowFullScreen="true">
-            </iframe>
+        <h3>Transmountain Expansion Dashboards</h3>
+        <div class="dashboard-images">
+            <img src="path/to/dashboard1.png" alt="Dashboard 1">
+            <img src="path/to/dashboard2.png" alt="Dashboard 2">
+            <img src="path/to/dashboard3.png" alt="Dashboard 3">
         </div>
 
         <div class="project">
