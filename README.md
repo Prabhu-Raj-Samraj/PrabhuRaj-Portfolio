@@ -19,6 +19,11 @@
             text-transform: uppercase;
         }
 
+        hr {
+            border: none; /* Removes all horizontal lines */
+            margin: 0;
+        }
+
         p {
             text-align: center;
             line-height: 1.6;
