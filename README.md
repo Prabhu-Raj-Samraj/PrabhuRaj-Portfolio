@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -66,6 +67,13 @@
     <p style="color: #fff; text-align: center; line-height: 1.6; margin-bottom: 20px; font-style: italic;">
         Motivated and dedicated Implementation Manager with 8+ years of experience in driving impactful projects and solving real-world challenges. With a solid foundation in technical support and customer success, I’m now expanding my expertise into the field of data analytics. Proficient in tools like Power BI, SQL, Python, and Excel, I leverage these skills to explore data-driven insights and create effective solutions. Specializing in data visualization and predictive analytics, I’ve started applying machine learning techniques to enhance decision-making processes. Additionally, I bring strong project management, problem-solving, and client collaboration skills, ensuring seamless execution of tasks. My journey reflects a passion for continuous learning and transitioning to a career in data analytics where I can blend my experience with new-age technologies.
     </p>
+
+    <h2 style="text-align: center; color: #ffa500; margin-top: 40px;">Projects</h2>
+    <ol style="color: #fff; line-height: 1.8; font-size: 16px;">
+        <li>Analysis of Transmountain Expansion Project</li>
+        <li>Global Super Stores - Dashboard and Explanation</li>
+        <li>TMDB Movie Analysis</li>
+    </ol>
 
 <div class="dashboard-container">
         <img src="https://raw.githubusercontent.com/Prabhu-Raj-Samraj/PrabhuRaj-DataPortfolio/main/Dashboard%201.png" alt="Main Dashboard">
