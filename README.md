@@ -25,11 +25,13 @@
         h1, h3 {
             text-align: center;
             color: #007bff;
+            margin-bottom: 20px;
         }
 
         p {
             text-align: center;
             line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         .powerbi-dashboard {
