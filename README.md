@@ -65,7 +65,7 @@
 
         .dashboard-container p {
             font-size: 16px;
-            color: #000;
+            color: #fff;
         }
     </style>
 </head>
