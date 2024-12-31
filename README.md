@@ -1,22 +1,9 @@
-<div align="center">
-  
-# **Prabhu Raj Portfolio**
-
-</div>
-
-<div align="center">
-
-*Motivated and dedicated Implementation Manager with 8+ years of experience in driving impactful projects and solving real-world challenges. With a solid foundation in technical support and customer success, I’m now expanding my expertise into the field of data analytics. Proficient in tools like Power BI, SQL, Python, and Excel, I leverage these skills to explore data-driven insights and create effective solutions.
-Specializing in data visualization and predictive analytics, I’ve started applying machine learning techniques to enhance decision-making processes. Additionally, I bring strong project management, problem-solving, and client collaboration skills, ensuring seamless execution of tasks. My journey reflects a passion for continuous learning and transitioning to a career in data analytics where I can blend my experience with new-age technologies.*
-
-</div>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Transmountain Expansion Dashboard</title>
+    <title>Prabhu Raj Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -38,6 +25,11 @@ Specializing in data visualization and predictive analytics, I’ve started appl
         h1, h3 {
             text-align: center;
             color: #007bff;
+        }
+
+        p {
+            text-align: center;
+            line-height: 1.6;
         }
 
         .powerbi-dashboard {
@@ -68,38 +60,39 @@ Specializing in data visualization and predictive analytics, I’ve started appl
         .btn:hover {
             background-color: #0056b3;
         }
+
+        .project {
+            margin-top: 40px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Avneet Kaur - Portfolio</h1>
+        <h1>Prabhu Raj Portfolio</h1>
+
+        <p>
+            Motivated and dedicated Implementation Manager with 8+ years of experience in driving impactful projects and solving real-world challenges. With a solid foundation in technical support and customer success, I’m now expanding my expertise into the field of data analytics. Proficient in tools like Power BI, SQL, Python, and Excel, I leverage these skills to explore data-driven insights and create effective solutions. Specializing in data visualization and predictive analytics, I’ve started applying machine learning techniques to enhance decision-making processes. Additionally, I bring strong project management, problem-solving, and client collaboration skills, ensuring seamless execution of tasks. My journey reflects a passion for continuous learning and transitioning to a career in data analytics where I can blend my experience with new-age technologies.
+        </p>
+
         <h3>Transmountain Expansion Dashboard</h3>
         <div class="powerbi-dashboard">
-            <!-- Embed Power BI Dashboard -->
             <iframe 
                 src="https://app.powerbi.com/view?r=eyJrIjoiMDIwNTRhNDYtNDU0Zi00ZWVjLWI1ZWEtNjJiMmYwMzc4ZDFjIiwidCI6ImY1MmYyMTgzLTlmNjctNGFkMi1iNjU2LTZmNzU0ZmUxOTZjYiIsImMiOjZ9" 
                 frameborder="0" 
                 allowFullScreen="true">
             </iframe>
         </div>
-        <div style="text-align: center;">
+
+        <div class="project">
+            <h3>Transmountain Expansion Project</h3>
+            <p>This project demonstrates my work on the Transmountain Expansion project. Click below to download the files.</p>
             <a href="https://github.com/Prabhu-Raj-Samraj/PrabhuRaj-DataPortfolio/raw/main/Transmountain%20Expansion%20project.zip" 
                target="_blank" 
                class="btn">
-               Download Power BI File
+               Download Project Files
             </a>
         </div>
     </div>
 </body>
 </html>
-
-
-<div class="project">
-    <h3>Transmountain Expansion Project</h3>
-    <p>This project demonstrates my work on the Transmountain Expansion project. Click below to download the files.</p>
-    <a href="https://github.com/Prabhu-Raj-Samraj/PrabhuRaj-DataPortfolio/raw/main/Transmountain%20Expansion%20project.zip" 
-       target="_blank" 
-       class="btn btn-primary">
-       Download Project Files
-    </a>
-</div>
