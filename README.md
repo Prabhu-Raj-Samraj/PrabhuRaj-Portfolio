@@ -82,9 +82,9 @@
 
         <h3>Transmountain Expansion Dashboards</h3>
         <div class="dashboard-images">
-            <img src="C:/Users/prabraj/Downloads/Dashboard 1.png" alt="Dashboard 1">
-            <img src="C:/Users/prabraj/Downloads/Dashboard 1.png" alt="Dashboard 2">
-            <img src="C:/Users/prabraj/Downloads/Dashboard 1.png" alt="Dashboard 3">
+            <img src="https://github.com/Prabhu-Raj-Samraj/PrabhuRaj-DataPortfolio/blob/main/Dashboard%201.png" alt="Dashboard 1">
+            <img src="https://github.com/Prabhu-Raj-Samraj/PrabhuRaj-DataPortfolio/blob/main/Dashboard%202.png"alt="Dashboard 2">
+            <img src="https://github.com/Prabhu-Raj-Samraj/PrabhuRaj-DataPortfolio/blob/main/Dashboard%203.png" alt="Dashboard 3">
         </div>
 
         <div class="project">
