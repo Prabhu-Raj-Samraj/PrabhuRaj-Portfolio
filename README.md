@@ -1,102 +1,296 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #333;
-            color: #fff;
-        }
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Farzaneh Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-        h1, h3 {
-            text-align: center;
-            color: #007bff;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
 
-        hr {
-            border: none; /* Removes all horizontal lines */
-            margin: 0;
-        }
+				<!-- Intro -->
+					<div id="intro">
+						<h1>Farzaneh Portfolio<br />
+						</h1>
+						<p>Motivated and skilled Data Analyst and Web Developer with a Master’s degree in Information Technology. Strong mathematical skills enable me to analyze and interpret complex data effectively. Expertise in handling big data sets, advanced programming in Python, Power BI, Tableau, Excel, R, and SQL, with proficiency in data visualization tools and machine learning algorithms. Specialized in data science and the creation of chatbots utilizing Natural Language Processing (NLP) techniques. Additionally, experienced in web development using HTML, CSS, JavaScript, Bootstrap, Angular, and Ionic.</a>
+						</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
 
-        p {
-            text-align: center;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Farzaneh the Programming Specialist</a>
+					</header>
 
-        .dashboard-images {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
-        }
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="tableau_projects.html">Tableau Projects</a></li>
+							<li><a href="sql_project.html">SQL Projects</a></li>
+							<li class="active"><a href="powerBI_projects.html">Power BI Projects</a></li>
+							<li><a href="python_projects.html">Python Projects</a></li>
+							<li><a href="excel_projects.html">Excel Projects</a></li>
+							<li><a href="website.html">Websites</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/farzaneh-shirzadeh-7a8200214" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+						</ul>
+					</nav>
 
-        .dashboard-container {
-            margin-bottom: 40px;
-            text-align: center;
-        }
+				<!-- Main -->
+					<div id="main">
 
-        .dashboard-container img {
-            max-width: 100%;
-            height: auto;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
-        }
+						<!-- Featured Post -->
+							
+							<style>
+								
+								.post.featured header.major h2 a:hover {
+        color: rgb(4, 126, 196) !important; /* Text color on hover */
+    }
+							</style>
 
-        .dashboard-container img:hover {
-            transform: scale(1.05);
-        }
+						<!-- Posts -->
+							<section class="posts">
+								<article>
+									<header>
+										<span class="date">December 30, 2023</span>
+										<h2><a href="https://app.powerbi.com/groups/me/reports/d33f0c91-f9c2-43f7-8e5c-8fdf8ca08195/ReportSection?experience=power-bi">Sales Data Analysis<br />
+										</a></h2>
+									</header>
+									<a href="https://app.powerbi.com/groups/me/reports/d33f0c91-f9c2-43f7-8e5c-8fdf8ca08195/ReportSection?experience=power-bi" class="image fit"><img src="images/sales data.png" alt="" /></a>
+									<p>Utilizing Power BI, the data is analyzed, encompassing key sales metrics such as Product, Quantity, Price, and Time, allowing for insightful insights into sales trends and patterns. </p>
+									<ul class="actions special">
+										<li><a href="https://app.powerbi.com/groups/me/reports/d33f0c91-f9c2-43f7-8e5c-8fdf8ca08195/ReportSection?experience=power-bi" class="button">View Project</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">June 30, 2023</span>
+										<h2><a href="https://app.powerbi.com/groups/me/reports/db73bf3b-d9c1-4958-af95-caeb680dd2fc/ReportSectionc997145e2ca318dbeab9?experience=power-bi">Health Indicators<br />
+										</a></h2>
+									</header>
+									<a href="https://app.powerbi.com/groups/me/reports/db73bf3b-d9c1-4958-af95-caeb680dd2fc/ReportSectionc997145e2ca318dbeab9?experience=power-bi" class="image fit"><img src="images/who-powerbi.jpg" alt="" /></a>
+									<p>This analysis focus on developed nations with leading health indicators and balance health performance with economic expenditure. </p>
+									<ul class="actions special">
+										<li><a href="https://app.powerbi.com/groups/me/reports/db73bf3b-d9c1-4958-af95-caeb680dd2fc/ReportSectionc997145e2ca318dbeab9?experience=power-bi" class="button">View Project</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">May, 2023</span>
+										<h2><a href="https://app.powerbi.com/groups/me/reports/5cea25e6-8302-46e8-829e-00a7344c4b76/ReportSection?experience=power-bi">Data Professional Survey Breakdown<br />
+										</a></h2>
+									</header>
+									<a href="https://app.powerbi.com/groups/me/reports/5cea25e6-8302-46e8-829e-00a7344c4b76/ReportSection?experience=power-bi" class="image fit"><img src="images/survey-powerbi.jpg" alt="" /></a>
+									<p>
+										The Data Professional Survey Breakdown in Power BI presents an insightful analysis of survey metrics including programming language preferences, difficulty levels, salary satisfaction, and job title-based salary averages. With the ability to filter by gender, users gain a comprehensive understanding of the data and make informed decisions. </p>
+									<ul class="actions special">
+										<li><a href="https://app.powerbi.com/groups/me/reports/5cea25e6-8302-46e8-829e-00a7344c4b76/ReportSection?experience=power-bi" class="button">View Project</a></li>
+									</ul>
+								</article>
+							
+							</section>
 
-        .dashboard-container h4 {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #ffa500;
-        }
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>Canada<br />
+								Alberta, Calgary</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(613) 501-4906</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">shirzadeh.itsu@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+								
+									<li><a href="https://www.linkedin.com/in/farzaneh-shirzadeh-7a8200214" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+									
+								</ul>
+							</section>
+						</section>
+					</footer>
 
-        .dashboard-container p {
-            font-size: 16px;
-            color: #fff;
-        }
-    </style>
-</head>
-<body>
-    <p style="color: #fff; text-align: center; line-height: 1.6; margin-bottom: 20px; font-style: italic;">
-        Motivated and dedicated Implementation Manager with 8+ years of experience in driving impactful projects and solving real-world challenges. With a solid foundation in technical support and customer success, I’m now expanding my expertise into the field of data analytics. Proficient in tools like Power BI, SQL, Python, and Excel, I leverage these skills to explore data-driven insights and create effective solutions. Specializing in data visualization and predictive analytics, I’ve started applying machine learning techniques to enhance decision-making processes. Additionally, I bring strong project management, problem-solving, and client collaboration skills, ensuring seamless execution of tasks. My journey reflects a passion for continuous learning and transitioning to a career in data analytics where I can blend my experience with new-age technologies.
-    </p>
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
 
-    <h2 style="text-align: center; color: #ffa500; margin-top: 40px;">Projects</h2>
-    <ol style="color: #fff; line-height: 1.8; font-size: 16px;">
-        <li>Analysis of Transmountain Expansion Project</li>
-        <li>Global Super Stores - Dashboard and Explanation</li>
-        <li>TMDB Movie Analysis</li>
-    </ol>
+			</div>
 
-    <div class="dashboard-container">
-        <img src="https://raw.githubusercontent.com/Prabhu-Raj-Samraj/PrabhuRaj-DataPortfolio/main/Dashboard%201.png" alt="Main Dashboard">
-        <h4>Main Dashboard</h4>
-        <p>This dashboard provides an overview of barrels produced, throughput capacity, and key trends over the years.</p>
-    </div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-    <div class="dashboard-container">
-        <img src="https://raw.githubusercontent.com/Prabhu-Raj-Samraj/PrabhuRaj-DataPortfolio/main/Dashboard%202.png" alt="Apportionment Dashboard">
-        <h4>Apportionment Dashboard</h4>
-        <p>This dashboard highlights apportionment percentages, accepted nominations, and pipeline utilization insights.</p>
-    </div>
+	</body>
+=======
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Farzaneh The Analyst Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-    <div class="dashboard-container">
-        <img src="https://raw.githubusercontent.com/Prabhu-Raj-Samraj/PrabhuRaj-DataPortfolio/main/Dashboard%203.png" alt="Export and Import Dashboard">
-        <h4>Export and Import Dashboard</h4>
-        <p>Focused on trade insights, this dashboard visualizes export and import trends by year, product, and region.</p>
-    </div>
-</body>
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>Farzaneh The Analyst Portfolio<br />
+						</h1>
+						<p> Proficiently utilized  Power BI to transform raw data, perform data modeling, conduct DAX calculations, apply machine learning for predictions, utilize filters and slicers, and create insightful reports and dashboards, effectively communicating valuable information.</a>
+						</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Farzaneh The Analyst</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="tableau_projects.html">Tableau Projects</a></li>
+							<li><a href="sql_project.html">SQL Projects</a></li>
+							<li class="active"><a href="powerBI_projects.html">Power BI Projects</a></li>
+							<li><a href="python_projects.html">Python Projects</a></li>
+							<li><a href="excel_projects.html">Excel Projects</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/farzaneh-shirzadeh-7a8200214" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							
+							<style>
+								
+								.post.featured header.major h2 a:hover {
+        color: rgb(4, 126, 196) !important; /* Text color on hover */
+    }
+							</style>
+
+						<!-- Posts -->
+							<section class="posts">
+								<article>
+									<header>
+										<span class="date">December 30, 2023</span>
+										<h2><a href="https://app.powerbi.com/groups/me/reports/d33f0c91-f9c2-43f7-8e5c-8fdf8ca08195/ReportSection?experience=power-bi">Sales Data Analysis<br />
+										</a></h2>
+									</header>
+									<a href="https://app.powerbi.com/groups/me/reports/d33f0c91-f9c2-43f7-8e5c-8fdf8ca08195/ReportSection?experience=power-bi" class="image fit"><img src="images/sales data.png" alt="" /></a>
+									<p>Utilizing Power BI, the data is analyzed, encompassing key sales metrics such as Product, Quantity, Price, and Time, allowing for insightful insights into sales trends and patterns. </p>
+									<ul class="actions special">
+										<li><a href="https://app.powerbi.com/groups/me/reports/d33f0c91-f9c2-43f7-8e5c-8fdf8ca08195/ReportSection?experience=power-bi" class="button">View Project</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">June 30, 2023</span>
+										<h2><a href="https://app.powerbi.com/groups/me/reports/db73bf3b-d9c1-4958-af95-caeb680dd2fc/ReportSectionc997145e2ca318dbeab9?experience=power-bi">Health Indicators<br />
+										</a></h2>
+									</header>
+									<a href="https://app.powerbi.com/groups/me/reports/db73bf3b-d9c1-4958-af95-caeb680dd2fc/ReportSectionc997145e2ca318dbeab9?experience=power-bi" class="image fit"><img src="images/who-powerbi.jpg" alt="" /></a>
+									<p>This analysis focus on developed nations with leading health indicators and balance health performance with economic expenditure. </p>
+									<ul class="actions special">
+										<li><a href="https://app.powerbi.com/groups/me/reports/db73bf3b-d9c1-4958-af95-caeb680dd2fc/ReportSectionc997145e2ca318dbeab9?experience=power-bi" class="button">View Project</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">May, 2023</span>
+										<h2><a href="https://app.powerbi.com/groups/me/reports/5cea25e6-8302-46e8-829e-00a7344c4b76/ReportSection?experience=power-bi">Data Professional Survey Breakdown<br />
+										</a></h2>
+									</header>
+									<a href="https://app.powerbi.com/groups/me/reports/5cea25e6-8302-46e8-829e-00a7344c4b76/ReportSection?experience=power-bi" class="image fit"><img src="images/survey-powerbi.jpg" alt="" /></a>
+									<p>
+										The Data Professional Survey Breakdown in Power BI presents an insightful analysis of survey metrics including programming language preferences, difficulty levels, salary satisfaction, and job title-based salary averages. With the ability to filter by gender, users gain a comprehensive understanding of the data and make informed decisions. </p>
+									<ul class="actions special">
+										<li><a href="https://app.powerbi.com/groups/me/reports/5cea25e6-8302-46e8-829e-00a7344c4b76/ReportSection?experience=power-bi" class="button">View Project</a></li>
+									</ul>
+								</article>
+							
+							</section>
+
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>Canada<br />
+								Alberta, Calgary</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(613) 501-4906</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">shirzadeh.itsu@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+								
+									<li><a href="https://www.linkedin.com/in/farzaneh-shirzadeh-7a8200214" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+									
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+
 </html>
