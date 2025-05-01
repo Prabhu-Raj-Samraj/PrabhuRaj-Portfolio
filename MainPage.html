@@ -48,60 +48,78 @@
        
 
 
- .carousel-container {
-         position: relative;
-         width: 100%;
-         overflow: hidden;
-         margin: 2rem auto;
-         }
-         .carousel {
-         display: flex;
-         overflow-x: auto;
-         scroll-snap-type: x mandatory;
-         gap: 1rem;
-         padding: 1rem;
-         -webkit-overflow-scrolling: touch;
-         scrollbar-width: none;
-         scroll-behavior: smooth;
-         }
-         .carousel::-webkit-scrollbar {
-         display: none;
-         }
-         .carousel img {
-         width: 300px;
-         height: auto;
-         flex-shrink: 0;
-         scroll-snap-align: center;
-         border-radius: 8px;
-         transition: transform 0.3s ease-in-out;
-         }
-         .carousel img:hover {
-         transform: scale(1.05);
-         }
-         .carousel-btn {
-         position: absolute;
-         top: 50%;
-         transform: translateY(-50%);
-         background: #222;
-         color: #fff;
-         border: none;
-         font-size: 2rem;
-         padding: 0.5rem 1rem;
-         cursor: pointer;
-         z-index: 10;
-         border-radius: 50%;
-         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-         transition: background 0.3s ease;
-         }
-         .carousel-btn:hover {
-         background: #444;
-         }
-         .carousel-btn.prev {
-         left: 1rem;
-         }
-         .carousel-btn.next {
-         right: 1rem;
-         }
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 2rem auto;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+}
+.carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.carousel img {
+  width: 200px;
+  height: auto;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  opacity: 0.5;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.carousel img.active {
+  width: 300px;
+  opacity: 1;
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #bbb;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 5px;
+  opacity: 0.8;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.carousel-btn:hover {
+  background: #888;
+  opacity: 1;
+}
+
+.carousel-btn:active {
+  background: #777;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+       
+       
 
       </style>
    </head>
@@ -293,13 +311,17 @@
                   </header>
 <div class="carousel-container">
   <button class="carousel-btn prev" onclick="scrollCarousel(-1)">&#10094;</button>
+<div class="carousel-container">
+  <button class="carousel-btn prev" onclick="scrollCarousel(-1)">&#10094;</button>
   <div class="carousel" id="pythonCarousel">
-    <img src="images/python/canada_py.jpeg" alt="Python Slide 1">
+    <img src="images/python/canada_py.jpeg" class="active" alt="Python Slide 1">
     <img src="images/python/caribean_py.jpeg" alt="Python Slide 2">
     <img src="images/python/central_py.jpeg" alt="Python Slide 3">
     <img src="images/python/west_py.jpeg" alt="Python Slide 4">
     <img src="images/python/East_py.jpeg" alt="Python Slide 5">
   </div>
+  <button class="carousel-btn next" onclick="scrollCarousel(1)">&#10095;</button>
+</div>
   <button class="carousel-btn next" onclick="scrollCarousel(1)">&#10095;</button>
 </div>
 <!--                    <a href="#" class="image fit">  <img src="images/python/canada_py.jpeg" alt="" />
@@ -429,11 +451,26 @@ function bindTabNavigation() {
 
 // Initial binding
 bindTabNavigation();
-
-         function scrollCarousel(direction) {
+function scrollCarousel(direction) {
   const carousel = document.getElementById('pythonCarousel');
-  const scrollAmount = 320; // image width + gap
-  carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  const images = carousel.querySelectorAll('img');
+  const active = carousel.querySelector('img.active');
+  let currentIndex = Array.from(images).indexOf(active);
+
+  // Remove current active class
+  if (active) active.classList.remove('active');
+
+  // Calculate new index with bounds
+  let newIndex = currentIndex + direction;
+  if (newIndex < 0) newIndex = 0;
+  if (newIndex >= images.length) newIndex = images.length - 1;
+
+  // Set new active image
+  const newActive = images[newIndex];
+  newActive.classList.add('active');
+
+  // Scroll to that image
+  newActive.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 }
       </script>
       <script src="assets/js/jquery.min.js"></script>
