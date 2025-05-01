@@ -45,16 +45,102 @@
          flex: 1 1 200px;
          min-width: 200px;
          } */
-       
+         #slider {
+      position: relative;
+      width: 70%;
+      height: 40vw;
+      margin: 100px auto;
+      perspective: 1400px;
+      transform-style: preserve-3d;
+    }
 
- .carousel-container {
+    input[type=radio] {
+      position: relative;
+      top: 110%;
+      left: 50%;
+      width: 18px;
+      height: 18px;
+      margin: 0 10px 0 0;
+      opacity: 0.4;
+      transform: translateX(-100px);
+      cursor: pointer;
+    }
+
+    input[type=radio]:nth-child(5) {
+      margin-right: 0px;
+    }
+
+    input[type=radio]:checked {
+      opacity: 1;
+    }
+
+    #slider label,
+    #slider label img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      color: white;
+      font-size: 70px;
+      font-weight: bold;
+      border-radius: 3px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 400ms ease;
+    }
+
+    #s1:checked ~ #slide1,
+    #s2:checked ~ #slide2,
+    #s3:checked ~ #slide3,
+    #s4:checked ~ #slide4,
+    #s5:checked ~ #slide5 {
+      box-shadow: 0 13px 26px rgba(0,0,0,0.3), 0 12px 6px rgba(0,0,0,0.2);
+      transform: translate3d(0%, 0, 0px);
+    }
+
+    #s1:checked ~ #slide2,
+    #s2:checked ~ #slide3,
+    #s3:checked ~ #slide4,
+    #s4:checked ~ #slide5,
+    #s5:checked ~ #slide1 {
+      transform: translate3d(20%, 0, -100px);
+    }
+
+    #s1:checked ~ #slide3,
+    #s2:checked ~ #slide4,
+    #s3:checked ~ #slide5,
+    #s4:checked ~ #slide1,
+    #s5:checked ~ #slide2 {
+      transform: translate3d(40%, 0, -250px);
+    }
+
+    #s1:checked ~ #slide4,
+    #s2:checked ~ #slide5,
+    #s3:checked ~ #slide1,
+    #s4:checked ~ #slide2,
+    #s5:checked ~ #slide3 {
+      transform: translate3d(-40%, 0, -250px);
+    }
+
+    #s1:checked ~ #slide5,
+    #s2:checked ~ #slide1,
+    #s3:checked ~ #slide2,
+    #s4:checked ~ #slide3,
+    #s5:checked ~ #slide4 {
+      transform: translate3d(-20%, 0, -100px);
+    }
+
+/*  .carousel-container {
             position: relative;
             width: 100%;
             max-width: 1000px;
             margin: 3rem auto;
             overflow: hidden;
-         }
-         .carousel {
+         } */
+/*          .carousel {
             display: flex;
             gap: 2rem;
             padding: 1rem;
@@ -82,8 +168,8 @@
             transform: scale(1.05);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             z-index: 2;
-         }
-         .carousel-btn {
+         } */
+/*          .carousel-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -110,7 +196,7 @@
          }
          .carousel-btn.next {
             right: 10px;
-         }
+         } */
 
       </style>
    </head>
@@ -300,7 +386,7 @@
                         </a>
                      </h2>
                   </header>
-<div class="carousel-container">
+<!-- <div class="carousel-container">
   <button class="carousel-btn prev" onclick="scrollCarousel(-1)">&#10094;</button>
 <div class="carousel-container">
   <button class="carousel-btn prev" onclick="scrollCarousel(-1)">&#10094;</button>
@@ -314,7 +400,20 @@
   <button class="carousel-btn next" onclick="scrollCarousel(1)">&#10095;</button>
 </div>
   <button class="carousel-btn next" onclick="scrollCarousel(1)">&#10095;</button>
-</div>
+</div> -->
+                    <section id="slider">
+    <input type="radio" name="slider" id="s1" checked>
+    <input type="radio" name="slider" id="s2">
+    <input type="radio" name="slider" id="s3">
+    <input type="radio" name="slider" id="s4">
+    <input type="radio" name="slider" id="s5">
+
+    <label for="s1" id="slide1"><img src="images/python/canada_py.jpeg" alt="Slide 1"></label>
+    <label for="s2" id="slide2"><img src="images/python/caribean_py.jpeg" alt="Slide 2"></label>
+    <label for="s3" id="slide3"><img src="images/python/central_py.jpeg" alt="Slide 3"></label>
+    <label for="s4" id="slide4"><img src="images/python/west_py.jpeg" alt="Slide 4"></label>
+    <label for="s5" id="slide5"><img src="images/python/East_py.jpeg" alt="Slide 5"></label>
+  </section>
 <!--                    <a href="#" class="image fit">  <img src="images/python/canada_py.jpeg" alt="" />
                   </a> -->
                    
