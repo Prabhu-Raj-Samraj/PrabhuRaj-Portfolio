@@ -306,6 +306,7 @@
     allSections.forEach(section => {
       section.style.display = section.id === target ? 'block' : 'none';
     });
+      document.body.classList.remove('is-menu-visible');
   }
 
          
