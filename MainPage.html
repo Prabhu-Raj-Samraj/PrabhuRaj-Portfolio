@@ -225,7 +225,7 @@
             <!--       </section> -->
             <!-- Python Projects -->
             <section class="content-section tab" id="python" style="display:none;">
-                 <section class="posts" >
+                 <section class="" >
                <article>
                   <header>
                      <span class="date">August, 2024</span>
@@ -311,10 +311,10 @@
     allSections.forEach(section => {
       section.style.display = section.id === target ? 'block' : 'none';
     });
-      const navPanel = document.getElementById('navPanel');
-  if (document.body.classList.contains('is-navPanel-visible')) {
-    document.body.classList.remove('is-navPanel-visible');
-  }
+  const navPanel = document.getElementById('navPanel');
+           if (navPanel) navPanel.style.display = 'none';
+           document.body.classList.remove('is-menu-visible');
+           document.body.classList.remove('is-navPanel-visible');
   }
 
          
