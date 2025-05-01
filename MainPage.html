@@ -45,6 +45,50 @@
          flex: 1 1 200px;
          min-width: 200px;
          } */
+         .carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 2rem auto;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  padding: 1rem;
+}
+
+.carousel img {
+  width: 300px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  border-radius: 8px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 0;
+}
+
+.carousel-btn.next {
+  right: 0;
+}
+
       </style>
    </head>
    <body class="is-preload">
@@ -233,8 +277,19 @@
                         </a>
                      </h2>
                   </header>
-                   <a href="#" class="image fit">  <img src="images/python/canada_py.jpeg" alt="" />
-                  </a>
+<div class="carousel-container">
+  <button class="carousel-btn prev" onclick="scrollCarousel(-1)">&#10094;</button>
+  <div class="carousel" id="pythonCarousel">
+    <img src="images/python/canada_py.jpeg" alt="Python Slide 1">
+    <img src="images/python/caribean_py.jpeg" alt="Python Slide 2">
+    <img src="images/python/central_py.jpeg" alt="Python Slide 3">
+    <img src="images/python/west_py.jpeg" alt="Python Slide 4">
+    <img src="images/python/East_py.jpeg" alt="Python Slide 5">
+  </div>
+  <button class="carousel-btn next" onclick="scrollCarousel(1)">&#10095;</button>
+</div>
+<!--                    <a href="#" class="image fit">  <img src="images/python/canada_py.jpeg" alt="" />
+                  </a> -->
                    
                      <p>
                         To enhance revenue in underperforming regions, a multi-faceted pricing strategy was developed using conditional business rules:
@@ -339,6 +394,12 @@
       activateTab(target);
     });
   });
+
+         function scrollCarousel(direction) {
+  const carousel = document.getElementById('pythonCarousel');
+  const scrollAmount = 320; // image width + gap
+  carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
       </script>
       <script src="assets/js/jquery.min.js"></script>
       <script src="assets/js/jquery.scrollex.min.js"></script>
