@@ -7,6 +7,31 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+<style>
+  .contact-split {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.contact-column {
+  flex: 1 1 300px;
+  min-width: 250px;
+}
+
+.contact-split p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.contact-split a {
+  color: inherit;
+  text-decoration: none;
+}
+</style>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -90,29 +115,18 @@
 
 							</section>
 
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Canada<br />
-								Alberta, Calgary</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(368) 999 3584</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">prabhuraj.sp@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-								
-									<li><a href="https://www.linkedin.com/in/prabhu-raj-6022b679" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-									
-								</ul>
-							</section>
-						</section>
+						<section class="contact-split">
+  <div class="contact-column">
+    <p><strong>Address:</strong> Alberta, Calgary</p>
+    <p><strong>Phone:</strong> (369) 999 3584</p>
+  </div>
+  <div class="contact-column">
+    <p><strong>Email:</strong> <a href="mailto:prabhuraj.sp@gmail.com">prabhuraj.sp@gmail.com</a></p>
+    <p><strong>Social:</strong> 
+      <a href="https://www.linkedin.com/in/prabhu-raj-6022b679/" class="icon brands fa-linkedin" style="margin-left: 5px;"></a>
+    </p>
+  </div>
+</section>
 					</footer>
 
 				
