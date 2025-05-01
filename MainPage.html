@@ -71,6 +71,7 @@
       transition: all 0.5s ease;
       transform: scale(0.8);
       z-index: 1;
+      cursor: pointer;
     }
 
     .carousel label img {
@@ -78,6 +79,7 @@
       height: auto;
       border-radius: 10px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
     }
 
     /* Center active */
@@ -88,7 +90,7 @@
     #s5:checked ~ .carousel #slide5 {
       opacity: 1;
       z-index: 3;
-      transform: scale(1);
+      transform: scale(1.1);
     }
 
     /* Next slide */
@@ -98,8 +100,8 @@
     #s4:checked ~ .carousel #slide5,
     #s5:checked ~ .carousel #slide1 {
       left: 60%;
-      opacity: 0.7;
-      transform: scale(0.9);
+      opacity: 0.6;
+      transform: scale(0.85);
       z-index: 2;
     }
 
@@ -110,8 +112,8 @@
     #s4:checked ~ .carousel #slide3,
     #s5:checked ~ .carousel #slide4 {
       left: 0%;
-      opacity: 0.7;
-      transform: scale(0.9);
+      opacity: 0.6;
+      transform: scale(0.85);
       z-index: 2;
     }
 
@@ -132,7 +134,7 @@
       transition: background 0.3s ease;
     }
 
-    input[type="radio"]:checked + .dot {
+    input[type="radio"]:checked + label.radio-dot {
       background: #333;
     }
 
@@ -339,7 +341,7 @@
 </div>
   <button class="carousel-btn next" onclick="scrollCarousel(1)">&#10095;</button>
 </div> --> 
- <div id="carousel-wrapper">
+<div id="carousel-wrapper">
   <!-- Radio buttons -->
   <input type="radio" name="slider" id="s1" checked>
   <input type="radio" name="slider" id="s2">
@@ -358,13 +360,14 @@
 
   <!-- Bottom dots -->
   <div class="dots">
-    <label class="dot" for="s1"></label>
-    <label class="dot" for="s2"></label>
-    <label class="dot" for="s3"></label>
-    <label class="dot" for="s4"></label>
-    <label class="dot" for="s5"></label>
+    <label class="radio-dot" for="s1"></label>
+    <label class="radio-dot" for="s2"></label>
+    <label class="radio-dot" for="s3"></label>
+    <label class="radio-dot" for="s4"></label>
+    <label class="radio-dot" for="s5"></label>
   </div>
 </div>
+
 
 <!--                    <a href="#" class="image fit">  <img src="images/python/canada_py.jpeg" alt="" />
                   </a> -->
