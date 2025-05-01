@@ -45,7 +45,7 @@
          flex: 1 1 200px;
          min-width: 200px;
          } */
-           #carousel-wrapper {
+     #carousel-wrapper {
       width: 90%;
       max-width: 1000px;
       margin: 80px auto;
@@ -82,7 +82,6 @@
       transition: transform 0.3s ease;
     }
 
-    /* Center active */
     #s1:checked ~ .carousel #slide1,
     #s2:checked ~ .carousel #slide2,
     #s3:checked ~ .carousel #slide3,
@@ -93,7 +92,6 @@
       transform: scale(1.1);
     }
 
-    /* Next slide */
     #s1:checked ~ .carousel #slide2,
     #s2:checked ~ .carousel #slide3,
     #s3:checked ~ .carousel #slide4,
@@ -101,23 +99,21 @@
     #s5:checked ~ .carousel #slide1 {
       left: 60%;
       opacity: 0.6;
-      transform: scale(0.85);
+      transform: scale(0.9);
       z-index: 2;
     }
 
-    /* Previous slide */
     #s1:checked ~ .carousel #slide5,
     #s2:checked ~ .carousel #slide1,
     #s3:checked ~ .carousel #slide2,
     #s4:checked ~ .carousel #slide3,
     #s5:checked ~ .carousel #slide4 {
-      left: 0%;
+      left: -20%;
       opacity: 0.6;
-      transform: scale(0.85);
+      transform: scale(0.9);
       z-index: 2;
     }
 
-    /* Dots */
     .dots {
       text-align: center;
       margin-top: 20px;
@@ -134,10 +130,13 @@
       transition: background 0.3s ease;
     }
 
-    input[type="radio"]:checked + label.radio-dot {
+    #s1:checked ~ .dots label[for="s1"],
+    #s2:checked ~ .dots label[for="s2"],
+    #s3:checked ~ .dots label[for="s3"],
+    #s4:checked ~ .dots label[for="s4"],
+    #s5:checked ~ .dots label[for="s5"] {
       background: #333;
     }
-
       </style>
    </head>
    <body class="is-preload">
@@ -341,32 +340,29 @@
 </div>
   <button class="carousel-btn next" onclick="scrollCarousel(1)">&#10095;</button>
 </div> --> 
-<div id="carousel-wrapper">
-  <!-- Radio buttons -->
-  <input type="radio" name="slider" id="s1" checked>
-  <input type="radio" name="slider" id="s2">
-  <input type="radio" name="slider" id="s3">
-  <input type="radio" name="slider" id="s4">
-  <input type="radio" name="slider" id="s5">
+ <div id="carousel-wrapper">
+    <input type="radio" name="slider" id="s1" checked>
+    <input type="radio" name="slider" id="s2">
+    <input type="radio" name="slider" id="s3">
+    <input type="radio" name="slider" id="s4">
+    <input type="radio" name="slider" id="s5">
 
-  <!-- Slides -->
-  <div class="carousel">
-    <label for="s1" id="slide1"><img src="images/python/canada_py.jpeg" alt="Slide 1"></label>
-    <label for="s2" id="slide2"><img src="images/python/caribean_py.jpeg" alt="Slide 2"></label>
-    <label for="s3" id="slide3"><img src="images/python/central_py.jpeg" alt="Slide 3"></label>
-    <label for="s4" id="slide4"><img src="images/python/west_py.jpeg" alt="Slide 4"></label>
-    <label for="s5" id="slide5"><img src="images/python/East_py.jpeg" alt="Slide 5"></label>
-  </div>
+    <div class="carousel">
+      <label for="s1" id="slide1"><img src="images/python/canada_py.jpeg" alt="Slide 1"></label>
+      <label for="s2" id="slide2"><img src="images/python/caribean_py.jpeg" alt="Slide 2"></label>
+      <label for="s3" id="slide3"><img src="images/python/central_py.jpeg" alt="Slide 3"></label>
+      <label for="s4" id="slide4"><img src="images/python/west_py.jpeg" alt="Slide 4"></label>
+      <label for="s5" id="slide5"><img src="images/python/East_py.jpeg" alt="Slide 5"></label>
+    </div>
 
-  <!-- Bottom dots -->
-  <div class="dots">
-    <label class="radio-dot" for="s1"></label>
-    <label class="radio-dot" for="s2"></label>
-    <label class="radio-dot" for="s3"></label>
-    <label class="radio-dot" for="s4"></label>
-    <label class="radio-dot" for="s5"></label>
+    <div class="dots">
+      <label for="s1"></label>
+      <label for="s2"></label>
+      <label for="s3"></label>
+      <label for="s4"></label>
+      <label for="s5"></label>
+    </div>
   </div>
-</div>
 
 
 <!--                    <a href="#" class="image fit">  <img src="images/python/canada_py.jpeg" alt="" />
