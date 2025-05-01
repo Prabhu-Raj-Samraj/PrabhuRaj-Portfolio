@@ -133,7 +133,7 @@
                      </header>
                          <p></p>
  <ul class="actions special">
-                        <li><a href="PR_PowerBI.html" class="button">View Project</a></li>
+                        <li><a href="#" class="button tab-trigger" data-target="powerbi">View Project</a></li>
                      </ul>
                      </div>
   <div class="skill-item">
@@ -145,7 +145,7 @@
                      </header>
                      <p></p>
                      <ul class="actions special">
-                        <li><a href="PR_Python.html" class="button">View Project</a></li>
+                        <li><a href="#" class="button tab-trigger" data-target="python">View Project</a></li>
                      </ul>
                      </div>
 
@@ -295,6 +295,19 @@
       <script>
          const navLinks = document.querySelectorAll('#nav .links li a');
          const allSections = document.querySelectorAll('.content-section');
+  const tabTriggers = document.querySelectorAll('.tab-trigger');
+
+  function activateTab(target) {
+    navLinks.forEach(l => l.parentElement.classList.remove('active'));
+    document.querySelectorAll(`[data-target="${target}"]`).forEach(el => {
+      if (el.closest('li')) el.closest('li').classList.add('active');
+    });
+
+    allSections.forEach(section => {
+      section.style.display = section.id === target ? 'block' : 'none';
+    });
+  }
+
          
          navLinks.forEach(link => {
            link.addEventListener('click', e => {
@@ -310,6 +323,13 @@
              });
            });
          });
+  tabTriggers.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const target = btn.getAttribute('data-target');
+      activateTab(target);
+    });
+  });
       </script>
       <script src="assets/js/jquery.min.js"></script>
       <script src="assets/js/jquery.scrollex.min.js"></script>
