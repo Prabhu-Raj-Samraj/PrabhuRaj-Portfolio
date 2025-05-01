@@ -1,40 +1,46 @@
 <!DOCTYPE HTML>
 <html>
-   <head>
-      <title>Prabhu Raj Portfolio</title>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-      <link rel="stylesheet" href="assets/css/main2.css" />
-      <noscript>
-         <link rel="stylesheet" href="assets/css/noscript.css" />
-      </noscript>
-      <style>
-         .skills-section {
-         padding: 2rem;
-         text-align: center;
-         }
-         .skills-grid {
-         display: grid;
-         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-         gap: 2rem;
-         max-width: 800px;
-         margin: 2rem auto;
-         }
-         .skill-item {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         }
-         .skill-item img {
-         width: 48px;
-         height: 48px;
-         margin-bottom: 0.5rem;
-         }
-         .skill-item span {
-         font-size: 1rem;
-         font-weight: 500;
-         }
-/*          .split.contact {
+
+<head>
+  <title>Prabhu Raj Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main2.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+  </noscript>
+  <style>
+    .skills-section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 2rem;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .skill-item img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-item span {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    /*          .split.contact {
          display: flex;
          flex-wrap: wrap;
          justify-content: space-between;
@@ -58,15 +64,15 @@
       display: none;
     }
 
-   .carousel {
+    .carousel {
       position: relative;
       height: 50vw;
       max-height: 500px;
     }
 
-     .carousel label {
+    .carousel label {
       position: absolute;
-         top: 3vw;
+      top: 3vw;
       width: 75%;
       left: 12.5%;
       opacity: 0;
@@ -82,36 +88,36 @@
       width: 100%;
       height: auto;
       border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease;
     }
 
-    #s1:checked ~ .carousel #slide1,
-    #s2:checked ~ .carousel #slide2,
-    #s3:checked ~ .carousel #slide3,
-    #s4:checked ~ .carousel #slide4,
-    #s5:checked ~ .carousel #slide5 {
+    #s1:checked~.carousel #slide1,
+    #s2:checked~.carousel #slide2,
+    #s3:checked~.carousel #slide3,
+    #s4:checked~.carousel #slide4,
+    #s5:checked~.carousel #slide5 {
       opacity: 1;
       z-index: 3;
       transform: scale(1.1);
     }
 
-    #s1:checked ~ .carousel #slide2,
-    #s2:checked ~ .carousel #slide3,
-    #s3:checked ~ .carousel #slide4,
-    #s4:checked ~ .carousel #slide5,
-    #s5:checked ~ .carousel #slide1 {
+    #s1:checked~.carousel #slide2,
+    #s2:checked~.carousel #slide3,
+    #s3:checked~.carousel #slide4,
+    #s4:checked~.carousel #slide5,
+    #s5:checked~.carousel #slide1 {
       left: 60%;
       opacity: 0.6;
       transform: scale(0.9);
       z-index: 2;
     }
 
-    #s1:checked ~ .carousel #slide5,
-    #s2:checked ~ .carousel #slide1,
-    #s3:checked ~ .carousel #slide2,
-    #s4:checked ~ .carousel #slide3,
-    #s5:checked ~ .carousel #slide4 {
+    #s1:checked~.carousel #slide5,
+    #s2:checked~.carousel #slide1,
+    #s3:checked~.carousel #slide2,
+    #s4:checked~.carousel #slide3,
+    #s5:checked~.carousel #slide4 {
       left: -20%;
       opacity: 0.6;
       transform: scale(0.9);
@@ -134,420 +140,422 @@
       transition: background 0.3s ease;
     }
 
-  /* Second carousel selectors */
-    #s6:checked ~ .carousel #slide6,
-    #s7:checked ~ .carousel #slide7 {
+    /* Second carousel selectors */
+    #s6:checked~.carousel #slide6,
+    #s7:checked~.carousel #slide7 {
       opacity: 1;
       z-index: 3;
       transform: scale(1.1);
     }
 
-    #s6:checked ~ .carousel #slide7,
-    #s7:checked ~ .carousel #slide6 {
+    #s6:checked~.carousel #slide7,
+    #s7:checked~.carousel #slide6 {
       left: 60%;
       opacity: 0.6;
       transform: scale(0.9);
       z-index: 2;
     }
 
-    #s6:checked ~ .carousel #slide6,
-    #s7:checked ~ .carousel #slide7 {
+    #s6:checked~.carousel #slide6,
+    #s7:checked~.carousel #slide7 {
       left: 12.5%;
     }
 
- 
-    #s1:checked ~ .dots label[for="s1"],
-    #s2:checked ~ .dots label[for="s2"],
-    #s3:checked ~ .dots label[for="s3"],
-    #s4:checked ~ .dots label[for="s4"],
-    #s5:checked ~ .dots label[for="s5"],
-    #s6:checked ~ .dots label[for="s6"],
-    #s7:checked ~ .dots label[for="s7"] {
+
+    #s1:checked~.dots label[for="s1"],
+    #s2:checked~.dots label[for="s2"],
+    #s3:checked~.dots label[for="s3"],
+    #s4:checked~.dots label[for="s4"],
+    #s5:checked~.dots label[for="s5"],
+    #s6:checked~.dots label[for="s6"],
+    #s7:checked~.dots label[for="s7"] {
       background: #333;
     }
-      </style>
-   </head>
-   <body class="is-preload">
-      <div id="wrapper" class="fade-in">
-         <!-- Intro -->
-         <div id="intro">
-            <h1>Prabhu Raj Portfolio</h1>
-            <p>Motivated and skilled Data Analyst with a Post Graduate Diploma in Data Analytics and currently pursuing a Post Graduate program in Artificial Intelligence. Strong mathematical background enables effective analysis and interpretation of complex datasets. Proficient in managing large-scale data using Python, SQL, Power BI, and Tableau, with a solid foundation in data visualization, as well as basic knowledge of machine learning and Natural Language Processing (NLP). Possess foundational knowledge in web development using HTML and CSS.<a href="https://www.linkedin.com/in/prabhu-raj-6022b679"> @PrabhuRajSamrajLinkedin </a>
-            <ul class="actions">
-               <li><a href="#main" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-            </ul>
-         </div>
-         <!-- Header -->
-         <header id="header">
-            <a href="#" class="logo">Prabhu the Data Specialist</a>
-         </header>
-         <!-- Nav -->
-         <nav id="nav">
-            <ul class="links">
-               <li class="active"><a href="#" data-target="home">Home</a></li>
-               <li><a href="#" data-target="powerbi">Power BI Projects</a></li>
-               <li><a href="#" data-target="python">Python Projects</a></li>
-            </ul>
-            <ul class="icons">
-               <li><a href="https://www.linkedin.com/in/prabhu-raj-6022b679" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-            </ul>
-         </nav>
-         <!-- Main Content -->
-         <div id="main">
-            <!-- Home/Skills -->
-            <section id="home" class="content-section tab " style="display:block;">
-               <section id="skills" class="skills-section">
-                  <h2>Technical Skills</h2>
-                  <div class="skills-grid">
-                     <div class="skill-item">
-                        <img src="images/icons_Svg/python-original.svg" alt="Python">
-                        <span>Python</span>
-                     </div>
-                     <div class="skill-item">
-                        <img src="images/icons_Svg/power-bi.png" alt="Power BI">
-                        <span>Power BI</span>
-                     </div>
-                     <div class="skill-item">
-                        <img src="images/icons_Svg/numpy-original.svg" alt="NumPy">
-                        <span>NumPy</span>
-                     </div>
-                     <div class="skill-item">
-                        <img src="images/icons_Svg/tableau-software.svg" alt="Tableau">
-                        <span>Tableau</span>
-                     </div>
-                     <div class="skill-item">
-                        <img src="images/icons_Svg/Amazon_Web_Services_Logo.svg" alt="AWS">
-                        <span>AWS</span>
-                     </div>
-                     <div class="skill-item">
-                        <img src="images/icons_Svg/salesforce-2.svg" alt="Salesforce">
-                        <span>Salesforce</span>
-                     </div>
-                     <div class="skill-item">
-                        <img src="images/icons_Svg/apache-original.svg" alt="Apache">
-                        <span>Apache</span>
-                     </div>
-                     <div class="skill-item">
-                        <img src="images/icons_Svg/apachespark-original.svg" alt="Spark">
-                        <span>Spark</span>
-                     </div>
-                     <div class="skill-item">
-                        <img src="images/icons_Svg/mysql-original.svg" alt="SQL">
-                        <span>SQL</span>
-                     </div>
-                     <div class="skill-item">
-                        <img src="images/icons_Svg/pandas-original.svg" alt="Pandas">
-                        <span>Pandas</span>
-                     </div>
-                  </div>
-<!--                </section>
-               <section id="skills" class="skills-section"> -->
- <div class="skills-grid">
+  </style>
+</head>
 
-                     <div class="skill-item">
-                       <header>
-                        <span class="date"></span>
-                        <h2><a href="PR_PowerBI.html">Power BI Projects<br />
-                           </a>
-                        </h2>
-                     </header>
-                         <p></p>
- <ul class="actions special">
-                        <li><a href="#" class="button tab-trigger" data-target="powerbi">View Project</a></li>
-                     </ul>
-                     </div>
-  <div class="skill-item">
-                       <header>
-                        <span class="date"></span>
-                        <h2><a href="PR_Python.html">Python Projects<br />
-                           </a>
-                        </h2>
-                     </header>
-                     <p></p>
-                     <ul class="actions special">
-                        <li><a href="#" class="button tab-trigger" data-target="python">View Project</a></li>
-                     </ul>
-                     </div>
-
-               
-             
- </div>
-               </section>
-            </section>
-            <!-- Power BI Projects -->
-            <!--       <section class="content-section" id="powerbi" style="display:none;"> -->
-            <div class="content-section tab" id="powerbi" style="display:none;">
- <section class="posts">
-               <!-- 	<div class="skills-grid" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;"> -->
-               <article >
-                  <header>
-                     <span class="date">August, 2024</span>
-                     <h2><a href="#">Trans Mountain Expansion<br />
-                        </a>
-                     </h2>
-                  </header>
-                  <p><b>Throughput, Capacity & Barrels (2006–2020)</b></p>
-                  <a href="#" class="image fit"><img src="images/Dashboard 1.png" alt="" />
-                  </a>
-                  <p>This dashboard visualizes oil barrels produced vs. producible, pipeline throughput vs. capacity over time, and trade direction. It highlights declining throughput in recent years despite large remaining production potential. Sankey and bar charts show regional trade and annual throughput variations.</p>
-                  <p><b>Apportionment for Pipelines</b></p>
-                  <a href="#" class="image fit"><img src="images/Dashboard 2.png" alt="" />
-                  </a>
-                  <p>Apportionment for Pipelines
-                     Displays accepted vs. original oil shipment nominations across pipelines from 2006 to 2020. It shows which pipelines had the most apportionment and visualizes acceptance rates by year and line. Useful for understanding congestion and priority allocations in the network.
-                  </p>
-                  <p><b>Product Throughput by Trade & Region</b></p>
-                  <a href="#" class="image fit"><img src="images/Dashboard 3.png" alt="" />
-                  </a>
-                  <p> Product Throughput by Trade & Region
-                     This dashboard breaks down throughput (1000 m³/d) by oil product types and trade direction from 2006 to 2020. Users can interact using buttons to filter by trade types like IntraCanada, Import, or Export. It highlights how different types of oil dominate throughput, especially in regions.
-                  </p>
-               </article>
-               <article >
-                  <header>
-                     <span class="date">Sep, 2024</span>
-                     <h2><a href="#">Sales Analysis<br />
-                        </a>
-                     </h2>
-                  </header>
-                  <p><b>Sales Performance Dashboard</b></p>
-                  <a href="#" class="image fit"><img src="images/Performance Analysis.jpeg" alt="" />
-                  </a>
-                  <p>This dashboard segments customers based on sales volume, order frequency, and profit, helping identify high-value clients. It tracks profit and sales by region and category, with filters to drill down into Furniture, Office Supplies, or Technology. Time series and pie charts reveal monthly sales trends and how each product category contributes to overall revenue and profit. A great tool for understanding customer behaviour and optimizing regional and category-wise sales strategies.</p>
-               </article>
-               <article >
-                  <header>
-                     <span class="date">Nov, 2024</span>
-                     <h2><a href="#">Movie Analysis<br />
-                        </a>
-                     </h2>
-                  </header>
-                  <p><b>TMDB Movie Analysis Dashboard</b></p>
-                  <a href="#" class="image fit"><img src="images/MovieAnalysis.jpeg" alt="" />
-                  </a>
-                  <p>This dashboard analyses 8,993 movies with a total revenue of $2.27T, highlighting top directors, producers, average scores, and global earnings. It features interactive parameters, filtering by year, director, and score range, allowing dynamic and user-driven insights. Visuals include revenue vs. budget correlation, monthly movie releases, and regional revenue distribution. A powerful tool to explore trends in the global film industry with flexible parameter-driven filtering.</p>
-               </article>
-               <article >
-                  <header>
-                     <span class="date">Feb, 2025</span>
-                     <h2><a href="#">Disaster Analysis<br />
-                        </a>
-                     </h2>
-                  </header>
-                  <p><b>Disaster Analysis Dashboard – Focused on Earthquakes</b></p>
-                  <a href="#" class="image fit"><img src="images/Disaster Analysis.jpeg" alt="" />
-                  </a>
-                  <p>This dashboard offers a global analysis of disasters, primarily earthquakes, covering average magnitude, depth, significance, and impact across 214 countries and 22K+ cities. It includes filters by magnitude, year, depth, and disaster type, helping users explore trends and severity over time. Visuals highlight time-of-day patterns, continent-level distribution, and correlations between magnitude, depth, and impact. Ideal for identifying seismic risk zones and understanding disaster behaviour across decades.</p>
-               </article>
-               <!-- 	</div>						 -->
-            </section>
+<body class="is-preload">
+  <div id="wrapper" class="fade-in">
+    <!-- Intro -->
+    <div id="intro">
+      <h1>Prabhu Raj Portfolio</h1>
+      <p>Motivated and skilled Data Analyst with a Post Graduate Diploma in Data Analytics and currently pursuing a Post Graduate program in Artificial Intelligence. Strong mathematical background enables effective analysis and interpretation of complex datasets. Proficient in managing large-scale data using Python, SQL, Power BI, and Tableau, with a solid foundation in data visualization, as well as basic knowledge of machine learning and Natural Language Processing (NLP). Possess foundational knowledge in web development using HTML and CSS.<a href="https://www.linkedin.com/in/prabhu-raj-6022b679"> @PrabhuRajSamrajLinkedin </a>
+      <ul class="actions">
+        <li><a href="#main" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+      </ul>
+    </div>
+    <!-- Header -->
+    <header id="header">
+      <a href="#" class="logo">Prabhu the Data Specialist</a>
+    </header>
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="links">
+        <li class="active"><a href="#" data-target="home">Home</a></li>
+        <li><a href="#" data-target="powerbi">Power BI Projects</a></li>
+        <li><a href="#" data-target="python">Python Projects</a></li>
+      </ul>
+      <ul class="icons">
+        <li><a href="https://www.linkedin.com/in/prabhu-raj-6022b679" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+      </ul>
+    </nav>
+    <!-- Main Content -->
+    <div id="main">
+      <!-- Home/Skills -->
+      <section id="home" class="content-section tab " style="display:block;">
+        <section id="skills" class="skills-section">
+          <h2>Technical Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <img src="images/icons_Svg/python-original.svg" alt="Python">
+              <span>Python</span>
             </div>
-            <!--       </section> -->
-            <!-- Python Projects -->
-            <section class="content-section tab" id="python" style="display:none;">
-                 <section class="" >
-               <article>
-                  <header>
-                     <span class="date">August, 2024</span>
-                     <h2><a href="#">Global Superstore – Revenue Optimization with Python<br />
-                        </a>
-                     </h2>
-                  </header>
+            <div class="skill-item">
+              <img src="images/icons_Svg/power-bi.png" alt="Power BI">
+              <span>Power BI</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/numpy-original.svg" alt="NumPy">
+              <span>NumPy</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/tableau-software.svg" alt="Tableau">
+              <span>Tableau</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/Amazon_Web_Services_Logo.svg" alt="AWS">
+              <span>AWS</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/salesforce-2.svg" alt="Salesforce">
+              <span>Salesforce</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/apache-original.svg" alt="Apache">
+              <span>Apache</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/apachespark-original.svg" alt="Spark">
+              <span>Spark</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/mysql-original.svg" alt="SQL">
+              <span>SQL</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/pandas-original.svg" alt="Pandas">
+              <span>Pandas</span>
+            </div>
+          </div>
+          <!--                </section>
+               <section id="skills" class="skills-section"> -->
+          <div class="skills-grid">
 
- <div id="carousel-wrapper">
-    <input type="radio" name="slider" id="s1" checked>
-    <input type="radio" name="slider" id="s2">
-    <input type="radio" name="slider" id="s3">
-    <input type="radio" name="slider" id="s4">
-    <input type="radio" name="slider" id="s5">
+            <div class="skill-item">
+              <header>
+                <span class="date"></span>
+                <h2><a href="PR_PowerBI.html">Power BI Projects<br />
+                  </a>
+                </h2>
+              </header>
+              <p></p>
+              <ul class="actions special">
+                <li><a href="#" class="button tab-trigger" data-target="powerbi">View Project</a></li>
+              </ul>
+            </div>
+            <div class="skill-item">
+              <header>
+                <span class="date"></span>
+                <h2><a href="PR_Python.html">Python Projects<br />
+                  </a>
+                </h2>
+              </header>
+              <p></p>
+              <ul class="actions special">
+                <li><a href="#" class="button tab-trigger" data-target="python">View Project</a></li>
+              </ul>
+            </div>
 
-    <div class="carousel">
-      <label for="s1" id="slide1"><img src="images/python/canada_py.jpeg" alt="Slide 1"></label>
-      <label for="s2" id="slide2"><img src="images/python/caribean_py.jpeg" alt="Slide 2"></label>
-      <label for="s3" id="slide3"><img src="images/python/central_py.jpeg" alt="Slide 3"></label>
-      <label for="s4" id="slide4"><img src="images/python/west_py.jpeg" alt="Slide 4"></label>
-      <label for="s5" id="slide5"><img src="images/python/East_py.jpeg" alt="Slide 5"></label>
-    </div>
 
-    <div class="dots">
-      <label for="s1"></label>
-      <label for="s2"></label>
-      <label for="s3"></label>
-      <label for="s4"></label>
-      <label for="s5"></label>
-    </div>
-  </div>
 
-                   
-                     <p>
-                        To enhance revenue in underperforming regions, a multi-faceted pricing strategy was developed using conditional business rules:
-                     </p>
-                     <ul>
-                        <li><strong>Demand-Based Adjustment:</strong> Prices were increased for high-demand items using a predefined uplift factor.</li>
-                        <li><strong>Premium Increase:</strong> Targeted price increments were applied to premium product categories to maximize margins.</li>
-                        <li><strong>Bundling Strategy:</strong> Discounts were offered on grouped products to encourage higher volume sales.</li>
-                        <li><strong>Dynamic Pricing:</strong> Prices were dynamically adjusted based on demand forecasts generated through ARIMA modeling.</li>
-                     </ul>
-                     <p>
-                        Each strategy was programmatically mapped to relevant product segments using pre-defined tags. Adjusted sales values were then incorporated into forecasting models to evaluate revenue impact and effectiveness.
-                     </p>
-               </article>
-               <article>
-               <header>
-               <span class="date">Nov, 2024</span>
-               <h2><a href="#">Global Superstore – Revenue Optimization with Python<br />
+          </div>
+        </section>
+      </section>
+      <!-- Power BI Projects -->
+      <!--       <section class="content-section" id="powerbi" style="display:none;"> -->
+      <div class="content-section tab" id="powerbi" style="display:none;">
+        <section class="posts">
+          <!-- 	<div class="skills-grid" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;"> -->
+          <article>
+            <header>
+              <span class="date">August, 2024</span>
+              <h2><a href="#">Trans Mountain Expansion<br />
+                </a>
               </h2>
-               </header>
- <div id="carousel-wrapper">
-    <input type="radio" name="slider2" id="s6" checked>
-    <input type="radio" name="slider2" id="s7">
+            </header>
+            <p><b>Throughput, Capacity & Barrels (2006–2020)</b></p>
+            <a href="#" class="image fit"><img src="images/Dashboard 1.png" alt="" />
+            </a>
+            <p>This dashboard visualizes oil barrels produced vs. producible, pipeline throughput vs. capacity over time, and trade direction. It highlights declining throughput in recent years despite large remaining production potential. Sankey and bar charts show regional trade and annual throughput variations.</p>
+            <p><b>Apportionment for Pipelines</b></p>
+            <a href="#" class="image fit"><img src="images/Dashboard 2.png" alt="" />
+            </a>
+            <p>Apportionment for Pipelines
+              Displays accepted vs. original oil shipment nominations across pipelines from 2006 to 2020. It shows which pipelines had the most apportionment and visualizes acceptance rates by year and line. Useful for understanding congestion and priority allocations in the network.
+            </p>
+            <p><b>Product Throughput by Trade & Region</b></p>
+            <a href="#" class="image fit"><img src="images/Dashboard 3.png" alt="" />
+            </a>
+            <p> Product Throughput by Trade & Region
+              This dashboard breaks down throughput (1000 m³/d) by oil product types and trade direction from 2006 to 2020. Users can interact using buttons to filter by trade types like IntraCanada, Import, or Export. It highlights how different types of oil dominate throughput, especially in regions.
+            </p>
+          </article>
+          <article>
+            <header>
+              <span class="date">Sep, 2024</span>
+              <h2><a href="#">Sales Analysis<br />
+                </a>
+              </h2>
+            </header>
+            <p><b>Sales Performance Dashboard</b></p>
+            <a href="#" class="image fit"><img src="images/Performance Analysis.jpeg" alt="" />
+            </a>
+            <p>This dashboard segments customers based on sales volume, order frequency, and profit, helping identify high-value clients. It tracks profit and sales by region and category, with filters to drill down into Furniture, Office Supplies, or Technology. Time series and pie charts reveal monthly sales trends and how each product category contributes to overall revenue and profit. A great tool for understanding customer behaviour and optimizing regional and category-wise sales strategies.</p>
+          </article>
+          <article>
+            <header>
+              <span class="date">Nov, 2024</span>
+              <h2><a href="#">Movie Analysis<br />
+                </a>
+              </h2>
+            </header>
+            <p><b>TMDB Movie Analysis Dashboard</b></p>
+            <a href="#" class="image fit"><img src="images/MovieAnalysis.jpeg" alt="" />
+            </a>
+            <p>This dashboard analyses 8,993 movies with a total revenue of $2.27T, highlighting top directors, producers, average scores, and global earnings. It features interactive parameters, filtering by year, director, and score range, allowing dynamic and user-driven insights. Visuals include revenue vs. budget correlation, monthly movie releases, and regional revenue distribution. A powerful tool to explore trends in the global film industry with flexible parameter-driven filtering.</p>
+          </article>
+          <article>
+            <header>
+              <span class="date">Feb, 2025</span>
+              <h2><a href="#">Disaster Analysis<br />
+                </a>
+              </h2>
+            </header>
+            <p><b>Disaster Analysis Dashboard – Focused on Earthquakes</b></p>
+            <a href="#" class="image fit"><img src="images/Disaster Analysis.jpeg" alt="" />
+            </a>
+            <p>This dashboard offers a global analysis of disasters, primarily earthquakes, covering average magnitude, depth, significance, and impact across 214 countries and 22K+ cities. It includes filters by magnitude, year, depth, and disaster type, helping users explore trends and severity over time. Visuals highlight time-of-day patterns, continent-level distribution, and correlations between magnitude, depth, and impact. Ideal for identifying seismic risk zones and understanding disaster behaviour across decades.</p>
+          </article>
+          <!-- 	</div>						 -->
+        </section>
+      </div>
+      <!--       </section> -->
+      <!-- Python Projects -->
+      <section class="content-section tab" id="python" style="display:none;">
+        <section class="">
+          <article>
+            <header>
+              <span class="date">August, 2024</span>
+              <h2><a href="#">Global Superstore – Revenue Optimization with Python<br />
+                </a>
+              </h2>
+            </header>
 
-    <div class="carousel">
-      <label for="s6" id="slide6"><img src="images/python/Season1.jpeg" alt="Slide A"></label>
-      <label for="s7" id="slide7"><img src="images/python/Season2.jpeg" alt="Slide B"></label>
-    </div>
+            <div id="carousel-wrapper">
+              <input type="radio" name="slider" id="s1" checked>
+              <input type="radio" name="slider" id="s2">
+              <input type="radio" name="slider" id="s3">
+              <input type="radio" name="slider" id="s4">
+              <input type="radio" name="slider" id="s5">
 
-    <div class="dots">
-      <label for="s6"></label>
-      <label for="s7"></label>
+              <div class="carousel">
+                <label for="s1" id="slide1"><img src="images/python/canada_py.jpeg" alt="Slide 1"></label>
+                <label for="s2" id="slide2"><img src="images/python/caribean_py.jpeg" alt="Slide 2"></label>
+                <label for="s3" id="slide3"><img src="images/python/central_py.jpeg" alt="Slide 3"></label>
+                <label for="s4" id="slide4"><img src="images/python/west_py.jpeg" alt="Slide 4"></label>
+                <label for="s5" id="slide5"><img src="images/python/East_py.jpeg" alt="Slide 5"></label>
+              </div>
+
+              <div class="dots">
+                <label for="s1"></label>
+                <label for="s2"></label>
+                <label for="s3"></label>
+                <label for="s4"></label>
+                <label for="s5"></label>
+              </div>
+            </div>
+
+
+            <p>
+              To enhance revenue in underperforming regions, a multi-faceted pricing strategy was developed using conditional business rules:
+            </p>
+            <ul>
+              <li><strong>Demand-Based Adjustment:</strong> Prices were increased for high-demand items using a predefined uplift factor.</li>
+              <li><strong>Premium Increase:</strong> Targeted price increments were applied to premium product categories to maximize margins.</li>
+              <li><strong>Bundling Strategy:</strong> Discounts were offered on grouped products to encourage higher volume sales.</li>
+              <li><strong>Dynamic Pricing:</strong> Prices were dynamically adjusted based on demand forecasts generated through ARIMA modeling.</li>
+            </ul>
+            <p>
+              Each strategy was programmatically mapped to relevant product segments using pre-defined tags. Adjusted sales values were then incorporated into forecasting models to evaluate revenue impact and effectiveness.
+            </p>
+          </article>
+          <article>
+            <header>
+              <span class="date">Nov, 2024</span>
+              <h2><a href="#">Global Superstore – Revenue Optimization with Python<br />
+              </h2>
+            </header>
+            <div id="carousel-wrapper">
+              <input type="radio" name="slider2" id="s6" checked>
+              <input type="radio" name="slider2" id="s7">
+
+              <div class="carousel">
+                <label for="s6" id="slide6"><img src="images/python/Season1.jpeg" alt="Slide A"></label>
+                <label for="s7" id="slide7"><img src="images/python/Season2.jpeg" alt="Slide B"></label>
+              </div>
+
+              <div class="dots">
+                <label for="s6"></label>
+                <label for="s7"></label>
+              </div>
+            </div>
+            <p>
+              Implemented strategies to enhance year-round sales and reduce the impact of seasonal fluctuations
+            </p>
+            <ul>
+              <li><strong>Demand-Based Adjustment:</strong> Prices were increased for high-demand items using a predefined uplift factor.</li>
+              <li><strong>Premium Increase:</strong> Targeted price increments were applied to premium product categories to maximize margins.</li>
+              <li><strong>Bundling Strategy:</strong> Discounts were offered on grouped products to encourage higher volume sales.</li>
+              <li><strong>Dynamic Pricing:</strong> Prices were dynamically adjusted based on demand forecasts generated through ARIMA modeling.</li>
+            </ul>
+            <p>
+              Each strategy was programmatically mapped to relevant product segments using pre-defined tags. Adjusted sales values were then incorporated into forecasting models to evaluate revenue impact and effectiveness.
+            </p>
+          </article>
+        </section>
+      </section>
+      <!-- Contact Section -->
+      <section class="split contact contact-flex">
+        <section class="alt">
+          <h3>Address</h3>
+          <p>Canada<br />
+            Alberta, Calgary</p>
+        </section>
+        <section>
+          <h3>Phone</h3>
+          <p><a href="#">(369) 999 3584</a></p>
+        </section>
+        <section>
+          <h3>Email</h3>
+          <p><a href="#">prabhuraj.sp@gmail.com</a></p>
+        </section>
+        <section>
+          <h3>Social</h3>
+          <ul class="icons alt">
+            <li><a href="https://www.linkedin.com/in/prabhu-raj-6022b679/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+          </ul>
+        </section>
+      </section>
     </div>
   </div>
-               <p>
-               Implemented strategies to enhance year-round sales and reduce the impact of seasonal fluctuations
-               </p>
-               <ul>
-               <li><strong>Demand-Based Adjustment:</strong> Prices were increased for high-demand items using a predefined uplift factor.</li>
-               <li><strong>Premium Increase:</strong> Targeted price increments were applied to premium product categories to maximize margins.</li>
-               <li><strong>Bundling Strategy:</strong> Discounts were offered on grouped products to encourage higher volume sales.</li>
-               <li><strong>Dynamic Pricing:</strong> Prices were dynamically adjusted based on demand forecasts generated through ARIMA modeling.</li>
-               </ul>
-               <p>
-               Each strategy was programmatically mapped to relevant product segments using pre-defined tags. Adjusted sales values were then incorporated into forecasting models to evaluate revenue impact and effectiveness.
-               </p>
-               </article>
-            </section>
-                    </section>
-            <!-- Contact Section -->
-          <section class="split contact contact-flex">
-    <section class="alt">
-        <h3>Address</h3>
-        <p>Canada<br />
-        Alberta, Calgary</p>
-    </section>
-    <section>
-        <h3>Phone</h3>
-        <p><a href="#">(369) 999 3584</a></p>
-    </section>
-    <section>
-        <h3>Email</h3>
-        <p><a href="#">prabhuraj.sp@gmail.com</a></p>
-    </section>
-    <section>
-        <h3>Social</h3>
-        <ul class="icons alt">
-            <li><a href="https://www.linkedin.com/in/prabhu-raj-6022b679/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-        </ul>
-    </section>
-</section>
-         </div>
-      </div>
-      <!-- Scripts -->
-      <script>
-         const navLinks = document.querySelectorAll('#nav .links li a');
-         const allSections = document.querySelectorAll('.content-section');
-  const tabTriggers = document.querySelectorAll('.tab-trigger');
-
-  function activateTab(target) {
-    navLinks.forEach(l => l.parentElement.classList.remove('active'));
-    document.querySelectorAll(`[data-target="${target}"]`).forEach(el => {
-      if (el.closest('li')) el.closest('li').classList.add('active');
+  <!-- Scripts -->
+  <script>
+    const navLinks = document.querySelectorAll('#nav .links li a');
+    const allSections = document.querySelectorAll('.content-section');
+      const tabTriggers = document.querySelectorAll('.tab-trigger');
+    
+      function activateTab(target) {
+        navLinks.forEach(l => l.parentElement.classList.remove('active'));
+        document.querySelectorAll(`[data-target="${target}"]`).forEach(el => {
+          if (el.closest('li')) el.closest('li').classList.add('active');
+        });
+    
+        allSections.forEach(section => {
+          section.style.display = section.id === target ? 'block' : 'none';
+        });
+         console.log('uin')
+          document.body.classList.remove('is-navPanel-visible');
+      //      const navPanel = document.getElementById('navPanel');
+      // if (navPanel && navPanel.style.display !== 'none') {
+      //   navPanel.style.display = 'none';
+      // }
+      // const navPanel = document.getElementById('navPanel');
+      // console.log('navPanel')
+      //          if (navPanel) navPanel.style.display = 'none';
+      //          document.body.classList.remove('is-menu-visible');
+      //          document.body.classList.remove('is-navPanel-visible');
+      }
+    
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+    
+        navLinks.forEach(l => l.parentElement.classList.remove('active'));
+        link.parentElement.classList.add('active');
+    
+        const target = link.getAttribute('data-target');
+    
+        allSections.forEach(section => {
+          section.style.display = section.id === target ? 'block' : 'none';
+        });
+      });
     });
+      tabTriggers.forEach(btn => {
+        btn.addEventListener('click', e => {
+          e.preventDefault();
+          const target = btn.getAttribute('data-target');
+          activateTab(target);
+        });
+      }); 
+    // const navPanelToggle = document.getElementById('navPanelToggle');
+    
+    //   if (navPanelToggle) {
+    //     navPanelToggle.addEventListener('click', function (e) {
+    //       e.preventDefault();
+    //   if (navPanel && navPanel.style.display !== 'none') {
+    //     navPanel.style.display = 'none';
+    //   }
+    //  if (navPanel && navPanel.style.display === 'none') {
+    //     navPanel.style.display = 'block';
+    //   }
+    //     });
+    //   }
+    
+    // Attach listeners to all nav and navPanel links
+    function bindTabNavigation() {
+      const allTabLinks = document.querySelectorAll('[data-target]');
+      allTabLinks.forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          const target = link.getAttribute('data-target');
+          activateTab(target);
+        });
+      });
+    }
+    
+    // Initial binding
+    bindTabNavigation();
+       function scrollCarousel(direction) {
+       const carousel = document.getElementById('pythonCarousel');
+       const images = carousel.querySelectorAll('img');
+       const active = carousel.querySelector('img.active');
+       let currentIndex = Array.from(images).indexOf(active);
+       if (active) active.classList.remove('active');
+       let newIndex = currentIndex + direction;
+       newIndex = Math.max(0, Math.min(newIndex, images.length - 1));
+       const newActive = images[newIndex];
+       newActive.classList.add('active');
+       newActive.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+    }
+  </script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
 
-    allSections.forEach(section => {
-      section.style.display = section.id === target ? 'block' : 'none';
-    });
-     console.log('uin')
-      document.body.classList.remove('is-navPanel-visible');
-  //      const navPanel = document.getElementById('navPanel');
-  // if (navPanel && navPanel.style.display !== 'none') {
-  //   navPanel.style.display = 'none';
-  // }
-  // const navPanel = document.getElementById('navPanel');
-  // console.log('navPanel')
-  //          if (navPanel) navPanel.style.display = 'none';
-  //          document.body.classList.remove('is-menu-visible');
-  //          document.body.classList.remove('is-navPanel-visible');
-  }
-
-         
-         navLinks.forEach(link => {
-           link.addEventListener('click', e => {
-             e.preventDefault();
-         
-             navLinks.forEach(l => l.parentElement.classList.remove('active'));
-             link.parentElement.classList.add('active');
-         
-             const target = link.getAttribute('data-target');
-         
-             allSections.forEach(section => {
-               section.style.display = section.id === target ? 'block' : 'none';
-             });
-           });
-         });
-  tabTriggers.forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const target = btn.getAttribute('data-target');
-      activateTab(target);
-    });
-  }); 
-// const navPanelToggle = document.getElementById('navPanelToggle');
-
-//   if (navPanelToggle) {
-//     navPanelToggle.addEventListener('click', function (e) {
-//       e.preventDefault();
-//   if (navPanel && navPanel.style.display !== 'none') {
-//     navPanel.style.display = 'none';
-//   }
-//  if (navPanel && navPanel.style.display === 'none') {
-//     navPanel.style.display = 'block';
-//   }
-//     });
-//   }
-
-// Attach listeners to all nav and navPanel links
-function bindTabNavigation() {
-  const allTabLinks = document.querySelectorAll('[data-target]');
-  allTabLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const target = link.getAttribute('data-target');
-      activateTab(target);
-    });
-  });
-}
-
-// Initial binding
-bindTabNavigation();
-   function scrollCarousel(direction) {
-            const carousel = document.getElementById('pythonCarousel');
-            const images = carousel.querySelectorAll('img');
-            const active = carousel.querySelector('img.active');
-            let currentIndex = Array.from(images).indexOf(active);
-            if (active) active.classList.remove('active');
-            let newIndex = currentIndex + direction;
-            newIndex = Math.max(0, Math.min(newIndex, images.length - 1));
-            const newActive = images[newIndex];
-            newActive.classList.add('active');
-            newActive.scrollIntoView({ behavior: 'smooth', inline: 'center' });
-         }
-      </script>
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/jquery.scrollex.min.js"></script>
-      <script src="assets/js/jquery.scrolly.min.js"></script>
-      <script src="assets/js/browser.min.js"></script>
-      <script src="assets/js/breakpoints.min.js"></script>
-      <script src="assets/js/util.js"></script>
-      <script src="assets/js/main.js"></script>
-   </body>
 </html>
