@@ -45,7 +45,8 @@
          flex: 1 1 200px;
          min-width: 200px;
          } */
-         #slider {
+        
+ #slider {
       position: relative;
       width: 70%;
       height: 40vw;
@@ -54,37 +55,17 @@
       transform-style: preserve-3d;
     }
 
-    input[type=radio] {
-      position: relative;
-      top: 110%;
-      left: 50%;
-      width: 18px;
-      height: 18px;
-      margin: 0 10px 0 0;
-      opacity: 0.4;
-      transform: translateX(-100px);
-      cursor: pointer;
+    input[type="radio"] {
+      display: none;
     }
-
-    input[type=radio]:nth-child(5) {
-      margin-right: 0px;
-    }
-
-    input[type=radio]:checked {
-      opacity: 1;
-    }
-
-    #slider label,
+#slider label,
     #slider label img {
       position: absolute;
       width: 100%;
       height: 100%;
       left: 0;
       top: 0;
-      color: white;
-      font-size: 70px;
-      font-weight: bold;
-      border-radius: 3px;
+      border-radius: 5px;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -97,11 +78,9 @@
     #s3:checked ~ #slide3,
     #s4:checked ~ #slide4,
     #s5:checked ~ #slide5 {
-      box-shadow: 0 13px 26px rgba(0,0,0,0.3), 0 12px 6px rgba(0,0,0,0.2);
-      transform: translate3d(0%, 0, 0px);
-    }
-
-    #s1:checked ~ #slide2,
+      box-shadow: 0 13px 26px rgba(0, 0, 0, 0.3), 0 12px 6px rgba(0, 0, 0, 0.2);
+      transform: translate3d(0%, 0, 0);
+    }#s1:checked ~ #slide2,
     #s2:checked ~ #slide3,
     #s3:checked ~ #slide4,
     #s4:checked ~ #slide5,
@@ -124,8 +103,7 @@
     #s5:checked ~ #slide3 {
       transform: translate3d(-40%, 0, -250px);
     }
-
-    #s1:checked ~ #slide5,
+ #s1:checked ~ #slide5,
     #s2:checked ~ #slide1,
     #s3:checked ~ #slide2,
     #s4:checked ~ #slide3,
@@ -133,113 +111,25 @@
       transform: translate3d(-20%, 0, -100px);
     }
 
+    .radio-buttons {
+      text-align: center;
+      margin-top: 30px;
+    }
 
-    
-         .radio-buttons input[type=radio] {
-  width: 18px;
-  height: 18px;
-  margin: 0 10px;
-  opacity: 0.8;
-  cursor: pointer;
-  appearance: none;
-  border: 2px solid #555;
-  border-radius: 50%;
-  background-color: #fff;
-  transition: background-color 0.3s ease;
-}
+    .radio-buttons label {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin: 0 8px;
+      background: #aaa;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
 
-.radio-buttons input[type=radio]:checked {
-  background-color: #555;
-  border-color: #222;
-}
-.radio-buttons {
-  text-align: center;
-  margin-top: 30vw;
-  position: relative;
-  z-index: 2;
-}
-
-.radio-buttons label {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  margin: 0 10px;
-  background: #ccc;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-input[type="radio"]:checked + label {
-  background: #333;
-}
-
-
-/*  .carousel-container {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-            margin: 3rem auto;
-            overflow: hidden;
-         } */
-/*          .carousel {
-            display: flex;
-            gap: 2rem;
-            padding: 1rem;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none;
-         }
-         .carousel::-webkit-scrollbar {
-            display: none;
-         }
-         .carousel img {
-            width: 200px;
-            height: auto;
-            flex-shrink: 0;
-            scroll-snap-align: center;
-            opacity: 0.4;
-            transition: all 0.5s ease;
-            border-radius: 10px;
-            transform: scale(0.85);
-         }
-         .carousel img.active {
-            width: 350px;
-            opacity: 1;
-            transform: scale(1.05);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            z-index: 2;
-         } */
-/*          .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: #ccc;
-            color: #333;
-            border: none;
-            font-size: 2rem;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            z-index: 10;
-            border-radius: 6px;
-            opacity: 0.8;
-            transition: all 0.3s ease;
-         }
-         .carousel-btn:hover {
-            background: #aaa;
-            opacity: 1;
-         }
-         .carousel-btn:active {
-            background: #888;
-         }
-         .carousel-btn.prev {
-            left: 10px;
-         }
-         .carousel-btn.next {
-            right: 10px;
-         } */
-
+    input[type="radio"]:checked + label.radio-dot {
+      background: #333;
+    }
       </style>
    </head>
    <body class="is-preload">
@@ -442,29 +332,29 @@ input[type="radio"]:checked + label {
   <button class="carousel-btn next" onclick="scrollCarousel(1)">&#10095;</button>
 </div>
   <button class="carousel-btn next" onclick="scrollCarousel(1)">&#10095;</button>
-</div> -->
-                   <section id="slider">
-  <input type="radio" name="slider" id="s1" checked>
+</div> -->  <input type="radio" name="slider" id="s1" checked>
   <input type="radio" name="slider" id="s2">
   <input type="radio" name="slider" id="s3">
   <input type="radio" name="slider" id="s4">
   <input type="radio" name="slider" id="s5">
 
-  <label for="s1" id="slide1"><img src="images/python/canada_py.jpeg" alt="Slide 1"></label>
-  <label for="s2" id="slide2"><img src="images/python/caribean_py.jpeg" alt="Slide 2"></label>
-  <label for="s3" id="slide3"><img src="images/python/central_py.jpeg" alt="Slide 3"></label>
-  <label for="s4" id="slide4"><img src="images/python/west_py.jpeg" alt="Slide 4"></label>
-  <label for="s5" id="slide5"><img src="images/python/East_py.jpeg" alt="Slide 5"></label>
+  <!-- Slider -->
+  <section id="slider">
+    <label for="s1" id="slide1"><img src="images/python/canada_py.jpeg" alt="Slide 1"></label>
+    <label for="s2" id="slide2"><img src="images/python/caribean_py.jpeg" alt="Slide 2"></label>
+    <label for="s3" id="slide3"><img src="images/python/central_py.jpeg" alt="Slide 3"></label>
+    <label for="s4" id="slide4"><img src="images/python/west_py.jpeg" alt="Slide 4"></label>
+    <label for="s5" id="slide5"><img src="images/python/East_py.jpeg" alt="Slide 5"></label>
+  </section>
 
-  <!-- Move radio button labels here -->
+  <!-- Bottom Dots -->
   <div class="radio-buttons">
-    <label for="s1"></label>
-    <label for="s2"></label>
-    <label for="s3"></label>
-    <label for="s4"></label>
-    <label for="s5"></label>
+    <label class="radio-dot" for="s1"></label>
+    <label class="radio-dot" for="s2"></label>
+    <label class="radio-dot" for="s3"></label>
+    <label class="radio-dot" for="s4"></label>
+    <label class="radio-dot" for="s5"></label>
   </div>
-</section>
 
 <!--                    <a href="#" class="image fit">  <img src="images/python/canada_py.jpeg" alt="" />
                   </a> -->
