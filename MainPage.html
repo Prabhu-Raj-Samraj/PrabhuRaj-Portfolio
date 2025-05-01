@@ -403,10 +403,11 @@
       section.style.display = section.id === target ? 'block' : 'none';
     });
      console.log('uin')
-       const navPanel = document.getElementById('navPanel');
-  if (navPanel && navPanel.style.display !== 'none') {
-    navPanel.style.display = 'none';
-  }
+      document.body.classList.remove('is-navPanel-visible');
+  //      const navPanel = document.getElementById('navPanel');
+  // if (navPanel && navPanel.style.display !== 'none') {
+  //   navPanel.style.display = 'none';
+  // }
   // const navPanel = document.getElementById('navPanel');
   // console.log('navPanel')
   //          if (navPanel) navPanel.style.display = 'none';
@@ -436,19 +437,19 @@
       activateTab(target);
     });
   }); 
-const navPanelToggle = document.getElementById('navPanelToggle');
+// const navPanelToggle = document.getElementById('navPanelToggle');
 
-  if (navPanelToggle) {
-    navPanelToggle.addEventListener('click', function (e) {
-      e.preventDefault();
-  if (navPanel && navPanel.style.display !== 'none') {
-    navPanel.style.display = 'none';
-  }
- if (navPanel && navPanel.style.display === 'none') {
-    navPanel.style.display = 'block';
-  }
-    });
-  }
+//   if (navPanelToggle) {
+//     navPanelToggle.addEventListener('click', function (e) {
+//       e.preventDefault();
+//   if (navPanel && navPanel.style.display !== 'none') {
+//     navPanel.style.display = 'none';
+//   }
+//  if (navPanel && navPanel.style.display === 'none') {
+//     navPanel.style.display = 'block';
+//   }
+//     });
+//   }
 
 // Attach listeners to all nav and navPanel links
 function bindTabNavigation() {
