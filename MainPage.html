@@ -435,7 +435,20 @@
       const target = btn.getAttribute('data-target');
       activateTab(target);
     });
-  });
+  }); 
+const navPanelToggle = document.getElementById('navPanelToggle');
+
+  if (navPanelToggle) {
+    navPanelToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+  if (navPanel && navPanel.style.display !== 'none') {
+    navPanel.style.display = 'none';
+  }
+ if (navPanel && navPanel.style.display === 'none') {
+    navPanel.style.display = 'block';
+  }
+    });
+  }
 
 // Attach listeners to all nav and navPanel links
 function bindTabNavigation() {
