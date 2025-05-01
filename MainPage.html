@@ -133,6 +133,23 @@
       transform: translate3d(-20%, 0, -100px);
     }
 
+ .radio-buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .radio-buttons input[type=radio] {
+      width: 18px;
+      height: 18px;
+      margin: 0 10px;
+      opacity: 0.4;
+      cursor: pointer;
+    }
+
+    .radio-buttons input[type=radio]:checked {
+      opacity: 1;
+    }
+
 /*  .carousel-container {
             position: relative;
             width: 100%;
@@ -414,6 +431,13 @@
     <label for="s4" id="slide4"><img src="images/python/west_py.jpeg" alt="Slide 4"></label>
     <label for="s5" id="slide5"><img src="images/python/East_py.jpeg" alt="Slide 5"></label>
   </section>
+  <div class="radio-buttons">
+    <label><input type="radio" name="slider" id="s1" checked></label>
+    <label><input type="radio" name="slider" id="s2"></label>
+    <label><input type="radio" name="slider" id="s3"></label>
+    <label><input type="radio" name="slider" id="s4"></label>
+    <label><input type="radio" name="slider" id="s5"></label>
+  </div>
 <!--                    <a href="#" class="image fit">  <img src="images/python/canada_py.jpeg" alt="" />
                   </a> -->
                    
