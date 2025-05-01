@@ -381,6 +381,10 @@
       section.style.display = section.id === target ? 'block' : 'none';
     });
      console.log('uin')
+       const navPanel = document.getElementById('navPanel');
+  if (navPanel && navPanel.style.display !== 'none') {
+    navPanel.style.display = 'none';
+  }
   // const navPanel = document.getElementById('navPanel');
   // console.log('navPanel')
   //          if (navPanel) navPanel.style.display = 'none';
