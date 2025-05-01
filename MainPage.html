@@ -239,7 +239,7 @@
           </div>
           <!--                </section>
                <section id="skills" class="skills-section"> -->
-<!--           <div class="skills-grid">
+          <div class="skills-grid">
 
             <div class="skill-item">
               <header>
@@ -264,14 +264,12 @@
               <ul class="actions special">
                 <li><a href="#" class="button tab-trigger" data-target="python">View Project</a></li>
               </ul>
-            </div></div> -->
+            </div></div>
         </section>
       </section>
       <!-- Power BI Projects -->
-      <!--       <section class="content-section" id="powerbi" style="display:none;"> -->
       <div class="content-section tab" id="powerbi" style="display:none;">
         <section class="posts">
-          <!-- 	<div class="skills-grid" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;"> -->
           <article>
             <header>
               <span class="date">August, 2024</span>
@@ -332,13 +330,13 @@
             </a>
             <p>This dashboard offers a global analysis of disasters, primarily earthquakes, covering average magnitude, depth, significance, and impact across 214 countries and 22K+ cities. It includes filters by magnitude, year, depth, and disaster type, helping users explore trends and severity over time. Visuals highlight time-of-day patterns, continent-level distribution, and correlations between magnitude, depth, and impact. Ideal for identifying seismic risk zones and understanding disaster behaviour across decades.</p>
           </article>
-          <!-- 	</div>						 -->
+        
         </section>
       </div>
-      <!--       </section> -->
+   
       <!-- Python Projects -->
       <section class="content-section tab" id="python" style="display:none;">
-        <section class="">
+        <section >
           <article>
             <header>
               <span class="date">August, 2024</span>
@@ -421,7 +419,7 @@
         </section>
       </section>
       <!-- Contact Section -->
-      <section class="split contact contact-flex">
+      <section class="split contact">
         <section class="alt">
           <h3>Address</h3>
           <p>Canada<br />
@@ -461,15 +459,7 @@
         });
          console.log('uin')
           document.body.classList.remove('is-navPanel-visible');
-      //      const navPanel = document.getElementById('navPanel');
-      // if (navPanel && navPanel.style.display !== 'none') {
-      //   navPanel.style.display = 'none';
-      // }
-      // const navPanel = document.getElementById('navPanel');
-      // console.log('navPanel')
-      //          if (navPanel) navPanel.style.display = 'none';
-      //          document.body.classList.remove('is-menu-visible');
-      //          document.body.classList.remove('is-navPanel-visible');
+      
       }
     
     
@@ -494,20 +484,7 @@
           activateTab(target);
         });
       }); 
-    // const navPanelToggle = document.getElementById('navPanelToggle');
-    
-    //   if (navPanelToggle) {
-    //     navPanelToggle.addEventListener('click', function (e) {
-    //       e.preventDefault();
-    //   if (navPanel && navPanel.style.display !== 'none') {
-    //     navPanel.style.display = 'none';
-    //   }
-    //  if (navPanel && navPanel.style.display === 'none') {
-    //     navPanel.style.display = 'block';
-    //   }
-    //     });
-    //   }
-    
+ 
     // Attach listeners to all nav and navPanel links
     function bindTabNavigation() {
       const allTabLinks = document.querySelectorAll('[data-target]');
