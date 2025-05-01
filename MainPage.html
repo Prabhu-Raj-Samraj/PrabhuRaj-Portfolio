@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <style>
-    .skills-section {
+    .skills-section, .posts, .split.contact {
       padding: 2rem;
-      text-align: center;
     }
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -18,30 +18,48 @@
       max-width: 800px;
       margin: 2rem auto;
     }
+
     .skill-item {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     .skill-item img {
       width: 48px;
       height: 48px;
       margin-bottom: 0.5rem;
     }
+
     .skill-item span {
       font-size: 1rem;
       font-weight: 500;
     }
+
     .split.contact {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 2rem;
-      padding: 2rem;
     }
+
     .split.contact section {
       flex: 1 1 200px;
       min-width: 200px;
+    }
+
+    .posts {
+      display: none;
+    }
+
+    .posts.active {
+      display: block;
+    }
+
+    nav ul.links li.active a {
+      color: #f56a6a;
+      font-weight: bold;
+      border-bottom: 2px solid #f56a6a;
     }
   </style>
 </head>
@@ -52,8 +70,7 @@
     <!-- Intro -->
     <div id="intro">
       <h1>Prabhu Raj Portfolio</h1>
-      <p>Motivated and skilled Data Analyst with a Post Graduate Diploma in Data Analytics and currently pursuing a Post Graduate program in Artificial Intelligence.
-        Proficient in Python, SQL, Power BI, and Tableau with foundational web development using HTML/CSS.
+      <p>Motivated and skilled Data Analyst... 
         <a href="https://www.linkedin.com/in/prabhu-raj-6022b679"> @PrabhuRajSamrajLinkedin</a>
       </p>
       <ul class="actions">
@@ -69,16 +86,15 @@
     <!-- Nav -->
     <nav id="nav">
       <ul class="links">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#powerbi">Power BI Projects</a></li>
-        <li><a href="#python">Python Projects</a></li>
+        <li class="active"><a href="#" data-target="powerbi">Power BI Projects</a></li>
+        <li><a href="#" data-target="python">Python Projects</a></li>
       </ul>
       <ul class="icons">
         <li><a href="https://www.linkedin.com/in/prabhu-raj-6022b679" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
       </ul>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Main -->
     <div id="main">
 
       <!-- Skills -->
@@ -98,52 +114,36 @@
       </section>
 
       <!-- Power BI Projects -->
-      <section class="posts" id="powerbi">
+      <section id="powerbi" class="posts active">
         <h2>Power BI Projects</h2>
-
         <article>
           <h3>Trans Mountain Expansion</h3>
           <img class="image fit" src="images/Dashboard 1.png" alt="">
-          <p>Throughput vs capacity over years with Sankey charts and regional distribution.</p>
+          <p>Throughput vs capacity with Sankey and regional distribution.</p>
         </article>
-
         <article>
           <h3>Sales Analysis</h3>
           <img class="image fit" src="images/Performance Analysis.jpeg" alt="">
-          <p>Segmentation by region, category, time-series and profit trend KPIs.</p>
-        </article>
-
-        <article>
-          <h3>Movie Analytics</h3>
-          <img class="image fit" src="images/MovieAnalysis.jpeg" alt="">
-          <p>Revenue, budget, director score visualized for 8,993 movies globally.</p>
-        </article>
-
-        <article>
-          <h3>Disaster Dashboard</h3>
-          <img class="image fit" src="images/Disaster Analysis.jpeg" alt="">
-          <p>Earthquake analysis with depth, magnitude, and global impact breakdown.</p>
+          <p>Category trends, profit margins, and customer segmentation.</p>
         </article>
       </section>
 
       <!-- Python Projects -->
-      <section class="posts" id="python">
+      <section id="python" class="posts">
         <h2>Python Projects</h2>
-
         <article>
           <h3>Revenue Optimization</h3>
           <img class="image fit" src="images/python/canada_py.jpeg" alt="">
-          <p>Applied pricing rules using demand and ARIMA forecasting for Canada sales data.</p>
+          <p>Pricing rules and ARIMA forecasting to enhance sales.</p>
         </article>
-
         <article>
           <h3>Seasonal Sales Adjustment</h3>
           <img class="image fit" src="images/python/Season1.jpeg" alt="">
-          <p>Used bundling, price uplift, and dynamic adjustment for seasonal product boosts.</p>
+          <p>Strategies to stabilize revenue during off-seasons.</p>
         </article>
       </section>
 
-      <!-- Contact Section -->
+      <!-- Contact -->
       <section class="split contact">
         <section class="alt">
           <h3>Address</h3>
@@ -160,7 +160,7 @@
         <section>
           <h3>Social</h3>
           <ul class="icons alt">
-            <li><a href="https://www.linkedin.com/in/prabhu-raj-6022b679/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+            <li><a href="https://www.linkedin.com/in/prabhu-raj-6022b679/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
           </ul>
         </section>
       </section>
@@ -168,6 +168,28 @@
   </div>
 
   <!-- Scripts -->
+  <script>
+    const navLinks = document.querySelectorAll('#nav .links li a');
+    const sections = document.querySelectorAll('.posts');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+
+        // Set active tab
+        navLinks.forEach(l => l.parentElement.classList.remove('active'));
+        link.parentElement.classList.add('active');
+
+        // Show related section
+        const target = link.getAttribute('data-target');
+        sections.forEach(section => {
+          section.classList.remove('active');
+          if (section.id === target) section.classList.add('active');
+        });
+      });
+    });
+  </script>
+
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.scrollex.min.js"></script>
   <script src="assets/js/jquery.scrolly.min.js"></script>
