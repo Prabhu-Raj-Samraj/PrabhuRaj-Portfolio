@@ -43,13 +43,6 @@
       flex: 1 1 200px;
       min-width: 200px;
     }
-    .posts { display: none; }
-    .posts.active { display: block; }
-    nav ul.links li.active a {
-      color: #f56a6a;
-      font-weight: bold;
-      border-bottom: 2px solid #f56a6a;
-    }
   </style>
 </head>
 <body class="is-preload">
@@ -76,7 +69,8 @@
     <!-- Nav -->
     <nav id="nav">
       <ul class="links">
-        <li class="active"><a href="#" data-target="powerbi">Power BI Projects</a></li>
+        <li class="active"><a href="#" data-target="home">Home</a></li>
+        <li><a href="#" data-target="powerbi">Power BI Projects</a></li>
         <li><a href="#" data-target="python">Python Projects</a></li>
       </ul>
       <ul class="icons">
@@ -87,25 +81,27 @@
     <!-- Main Content -->
     <div id="main">
 
-      <!-- Skills -->
-      <section id="skills" class="skills-section">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
-          <div class="skill-item"><img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI"><span>Power BI</span></div>
-          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><span>NumPy</span></div>
-          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><span>Pandas</span></div>
-          <div class="skill-item"><img src="https://simpleicons.org/icons/tableau.svg" alt="Tableau"><span>Tableau</span></div>
-          <div class="skill-item"><img src="https://simpleicons.org/icons/amazonaws.svg" alt="AWS"><span>AWS</span></div>
-          <div class="skill-item"><img src="https://simpleicons.org/icons/salesforce.svg" alt="Salesforce"><span>Salesforce</span></div>
-          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Apache"><span>Apache</span></div>
-          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" alt="Spark"><span>Spark</span></div>
-          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><span>SQL</span></div>
-        </div>
+      <!-- Home/Skills -->
+      <section id="home" class="content-section" style="display:block;">
+        <section id="skills" class="skills-section">
+          <h2>Technical Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+            <div class="skill-item"><img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI"><span>Power BI</span></div>
+            <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><span>NumPy</span></div>
+            <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><span>Pandas</span></div>
+            <div class="skill-item"><img src="https://simpleicons.org/icons/tableau.svg" alt="Tableau"><span>Tableau</span></div>
+            <div class="skill-item"><img src="https://simpleicons.org/icons/amazonaws.svg" alt="AWS"><span>AWS</span></div>
+            <div class="skill-item"><img src="https://simpleicons.org/icons/salesforce.svg" alt="Salesforce"><span>Salesforce</span></div>
+            <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Apache"><span>Apache</span></div>
+            <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" alt="Spark"><span>Spark</span></div>
+            <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><span>SQL</span></div>
+          </div>
+        </section>
       </section>
 
       <!-- Power BI Projects -->
-      <section class="posts active" id="powerbi">
+      <section class="content-section" id="powerbi" style="display:none;">
         <h2>Power BI Projects</h2>
         <article>
           <h3>Trans Mountain Expansion</h3>
@@ -130,7 +126,7 @@
       </section>
 
       <!-- Python Projects -->
-      <section class="posts" id="python">
+      <section class="content-section" id="python" style="display:none;">
         <h2>Python Projects</h2>
         <article>
           <h3>Revenue Optimization</h3>
@@ -171,7 +167,7 @@
   <!-- Scripts -->
   <script>
     const navLinks = document.querySelectorAll('#nav .links li a');
-    const sections = document.querySelectorAll('.posts');
+    const allSections = document.querySelectorAll('.content-section');
 
     navLinks.forEach(link => {
       link.addEventListener('click', e => {
@@ -181,9 +177,9 @@
         link.parentElement.classList.add('active');
 
         const target = link.getAttribute('data-target');
-        sections.forEach(section => {
-          section.classList.remove('active');
-          if (section.id === target) section.classList.add('active');
+
+        allSections.forEach(section => {
+          section.style.display = section.id === target ? 'block' : 'none';
         });
       });
     });
