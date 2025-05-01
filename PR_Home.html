@@ -36,6 +36,37 @@
   text-decoration: none;
   margin-left:0.5rem;
 }
+/* Icons  */
+.skills-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-item img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+}
+
+.skill-item span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 </style>
 	<body class="is-preload">
 
@@ -73,6 +104,47 @@
 
 				<!-- Main -->
 					<div id="main">
+<section id="skills" class="skills-section">
+  <h2>Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+      <span>Python</span>
+    </div>
+    <div class="skill-item">
+      <img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI">
+      <span>Power BI</span>
+    </div>
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+      <span>NumPy</span>
+    </div>
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tableau/tableau-original.svg" alt="Tableau">
+      <span>Tableau</span>
+    </div>
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" alt="AWS">
+      <span>AWS</span>
+    </div>
+    <div class="skill-item">
+      <img src="https://img.icons8.com/fluency/48/salesforce.png" alt="Salesforce">
+      <span>Salesforce</span>
+    </div>
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Apache">
+      <span>Apache</span>
+    </div>
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" alt="Spark">
+      <span>Spark</span>
+    </div>
+    <div class="skill-item">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
+      <span>SQL</span>
+    </div>
+  </div>
+</section>
 
 						<!-- Posts -->
 							<section class="posts">
