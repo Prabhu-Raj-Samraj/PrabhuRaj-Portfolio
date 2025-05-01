@@ -45,16 +45,11 @@
          flex: 1 1 200px;
          min-width: 200px;
          } */
-        
- 
-
-   
-
-        #carousel-wrapper {
+           #carousel-wrapper {
       width: 90%;
       max-width: 1000px;
       margin: 80px auto;
-      perspective: 1400px;
+      perspective: 1000px;
       position: relative;
     }
 
@@ -64,77 +59,63 @@
 
     .carousel {
       position: relative;
-      width: 100%;
-      height: 500px;
-      transform-style: preserve-3d;
-      transition: transform 0.5s;
+      height: 400px;
     }
 
     .carousel label {
       position: absolute;
-      width: 100%;
-      height: 100%;
       top: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.5s ease, opacity 0.5s ease;
-      cursor: pointer;
-      opacity: 0.6;
-      transform: translate3d(0, 0, -500px);
+      width: 60%;
+      left: 20%;
+      opacity: 0;
+      transition: all 0.5s ease;
+      transform: scale(0.8);
+      z-index: 1;
     }
 
     .carousel label img {
-      width: 90%;
+      width: 100%;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
-    /* Slide positions */
-    #s1:checked ~ .carousel #slide1 {
-      transform: translate3d(0, 0, 0);
+    /* Center active */
+    #s1:checked ~ .carousel #slide1,
+    #s2:checked ~ .carousel #slide2,
+    #s3:checked ~ .carousel #slide3,
+    #s4:checked ~ .carousel #slide4,
+    #s5:checked ~ .carousel #slide5 {
       opacity: 1;
-      z-index: 5;
+      z-index: 3;
+      transform: scale(1);
     }
+
+    /* Next slide */
     #s1:checked ~ .carousel #slide2,
     #s2:checked ~ .carousel #slide3,
     #s3:checked ~ .carousel #slide4,
     #s4:checked ~ .carousel #slide5,
     #s5:checked ~ .carousel #slide1 {
-      transform: translate3d(40%, 0, -100px);
-      z-index: 4;
+      left: 60%;
+      opacity: 0.7;
+      transform: scale(0.9);
+      z-index: 2;
     }
 
-    #s1:checked ~ .carousel #slide3,
-    #s2:checked ~ .carousel #slide4,
-    #s3:checked ~ .carousel #slide5,
-    #s4:checked ~ .carousel #slide1,
-    #s5:checked ~ .carousel #slide2 {
-      transform: translate3d(80%, 0, -200px);
-      z-index: 3;
-    }
-
+    /* Previous slide */
     #s1:checked ~ .carousel #slide5,
     #s2:checked ~ .carousel #slide1,
     #s3:checked ~ .carousel #slide2,
     #s4:checked ~ .carousel #slide3,
     #s5:checked ~ .carousel #slide4 {
-      transform: translate3d(-40%, 0, -100px);
-      z-index: 4;
+      left: 0%;
+      opacity: 0.7;
+      transform: scale(0.9);
+      z-index: 2;
     }
 
-    #s1:checked ~ .carousel #slide4,
-    #s2:checked ~ .carousel #slide5,
-    #s3:checked ~ .carousel #slide1,
-    #s4:checked ~ .carousel #slide2,
-    #s5:checked ~ .carousel #slide3 {
-      transform: translate3d(-80%, 0, -200px);
-      z-index: 3;
-    }
-
-    /* Radio button dots */
+    /* Dots */
     .dots {
       text-align: center;
       margin-top: 20px;
@@ -152,8 +133,9 @@
     }
 
     input[type="radio"]:checked + .dot {
-      background: #444;
+      background: #333;
     }
+
       </style>
    </head>
    <body class="is-preload">
@@ -357,32 +339,32 @@
 </div>
   <button class="carousel-btn next" onclick="scrollCarousel(1)">&#10095;</button>
 </div> --> 
-  <div id="carousel-wrapper">
-    <!-- Radio Inputs -->
-    <input type="radio" name="slider" id="s1" checked>
-    <input type="radio" name="slider" id="s2">
-    <input type="radio" name="slider" id="s3">
-    <input type="radio" name="slider" id="s4">
-    <input type="radio" name="slider" id="s5">
+ <div id="carousel-wrapper">
+  <!-- Radio buttons -->
+  <input type="radio" name="slider" id="s1" checked>
+  <input type="radio" name="slider" id="s2">
+  <input type="radio" name="slider" id="s3">
+  <input type="radio" name="slider" id="s4">
+  <input type="radio" name="slider" id="s5">
 
-    <!-- Carousel Slides -->
-    <div class="carousel">
-      <label for="s1" id="slide1"><img src="images/python/canada_py.jpeg" alt="Slide 1"></label>
-      <label for="s2" id="slide2"><img src="images/python/caribean_py.jpeg" alt="Slide 2"></label>
-      <label for="s3" id="slide3"><img src="images/python/central_py.jpeg" alt="Slide 3"></label>
-      <label for="s4" id="slide4"><img src="images/python/west_py.jpeg" alt="Slide 4"></label>
-      <label for="s5" id="slide5"><img src="images/python/East_py.jpeg" alt="Slide 5"></label>
-    </div>
-
-    <!-- Dots -->
-    <div class="dots">
-      <label for="s1" class="dot"></label>
-      <label for="s2" class="dot"></label>
-      <label for="s3" class="dot"></label>
-      <label for="s4" class="dot"></label>
-      <label for="s5" class="dot"></label>
-    </div>
+  <!-- Slides -->
+  <div class="carousel">
+    <label for="s1" id="slide1"><img src="images/python/canada_py.jpeg" alt="Slide 1"></label>
+    <label for="s2" id="slide2"><img src="images/python/caribean_py.jpeg" alt="Slide 2"></label>
+    <label for="s3" id="slide3"><img src="images/python/central_py.jpeg" alt="Slide 3"></label>
+    <label for="s4" id="slide4"><img src="images/python/west_py.jpeg" alt="Slide 4"></label>
+    <label for="s5" id="slide5"><img src="images/python/East_py.jpeg" alt="Slide 5"></label>
   </div>
+
+  <!-- Bottom dots -->
+  <div class="dots">
+    <label class="dot" for="s1"></label>
+    <label class="dot" for="s2"></label>
+    <label class="dot" for="s3"></label>
+    <label class="dot" for="s4"></label>
+    <label class="dot" for="s5"></label>
+  </div>
+</div>
 
 <!--                    <a href="#" class="image fit">  <img src="images/python/canada_py.jpeg" alt="" />
                   </a> -->
