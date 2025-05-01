@@ -415,6 +415,21 @@
     });
   });
 
+// Attach listeners to all nav and navPanel links
+function bindTabNavigation() {
+  const allTabLinks = document.querySelectorAll('[data-target]');
+  allTabLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = link.getAttribute('data-target');
+      activateTab(target);
+    });
+  });
+}
+
+// Initial binding
+bindTabNavigation();
+
          function scrollCarousel(direction) {
   const carousel = document.getElementById('pythonCarousel');
   const scrollAmount = 320; // image width + gap
