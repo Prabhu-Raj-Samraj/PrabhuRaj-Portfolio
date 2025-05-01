@@ -46,7 +46,11 @@
          min-width: 200px;
          } */
         
- #slider {
+ 
+
+   
+
+       #slider {
       position: relative;
       width: 70%;
       height: 40vw;
@@ -58,7 +62,8 @@
     input[type="radio"] {
       display: none;
     }
-#slider label,
+
+    #slider label,
     #slider label img {
       position: absolute;
       width: 100%;
@@ -78,14 +83,17 @@
     #s3:checked ~ #slide3,
     #s4:checked ~ #slide4,
     #s5:checked ~ #slide5 {
-      box-shadow: 0 13px 26px rgba(0, 0, 0, 0.3), 0 12px 6px rgba(0, 0, 0, 0.2);
       transform: translate3d(0%, 0, 0);
-    }#s1:checked ~ #slide2,
+      z-index: 5;
+    }
+
+    #s1:checked ~ #slide2,
     #s2:checked ~ #slide3,
     #s3:checked ~ #slide4,
     #s4:checked ~ #slide5,
     #s5:checked ~ #slide1 {
       transform: translate3d(20%, 0, -100px);
+      z-index: 4;
     }
 
     #s1:checked ~ #slide3,
@@ -94,6 +102,7 @@
     #s4:checked ~ #slide1,
     #s5:checked ~ #slide2 {
       transform: translate3d(40%, 0, -250px);
+      z-index: 3;
     }
 
     #s1:checked ~ #slide4,
@@ -102,13 +111,16 @@
     #s4:checked ~ #slide2,
     #s5:checked ~ #slide3 {
       transform: translate3d(-40%, 0, -250px);
+      z-index: 2;
     }
- #s1:checked ~ #slide5,
+
+    #s1:checked ~ #slide5,
     #s2:checked ~ #slide1,
     #s3:checked ~ #slide2,
     #s4:checked ~ #slide3,
     #s5:checked ~ #slide4 {
       transform: translate3d(-20%, 0, -100px);
+      z-index: 1;
     }
 
     .radio-buttons {
@@ -332,7 +344,8 @@
   <button class="carousel-btn next" onclick="scrollCarousel(1)">&#10095;</button>
 </div>
   <button class="carousel-btn next" onclick="scrollCarousel(1)">&#10095;</button>
-</div> -->  <input type="radio" name="slider" id="s1" checked>
+</div> --> 
+<input type="radio" name="slider" id="s1" checked>
   <input type="radio" name="slider" id="s2">
   <input type="radio" name="slider" id="s3">
   <input type="radio" name="slider" id="s4">
