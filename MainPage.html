@@ -81,7 +81,22 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease;
     }
+/* Enable video to display */
+.carousel label video {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
 
+/* Make radio #s8 activate slide8 */
+#s8:checked ~ .carousel #slide8 {
+  opacity: 1;
+  z-index: 3;
+  transform: scale(1.1);
+  left: 12.5%;
+}
     #s1:checked~.carousel #slide1,
     #s2:checked~.carousel #slide2,
     #s3:checked~.carousel #slide3,
@@ -161,6 +176,9 @@
     #s7:checked~.dots label[for="s7"] {
       background: #333;
     }
+    #s8:checked ~ .dots label[for="s8"] {
+  background: #333;
+}
     
     @media (max-width: 768px) {
   .skill-item .actions.special {
@@ -463,7 +481,14 @@
         <input type="radio" name="slider" id="s8" checked>
         <div class="carousel">
         <label for="s8" id="slide8">
-  <video src="images/AirQualityVideo.mp4" autoplay muted loop playsinline></video>
+ <video 
+        src="images/AirQualityVideo.mp4" 
+        autoplay 
+        muted 
+        loop 
+        playsinline 
+        type="video/mp4"
+      ></video>
 </label>
         </div>
         <div class="dots">
