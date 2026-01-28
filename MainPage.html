@@ -72,6 +72,7 @@
       cursor: pointer;
       max-width: 100%;
       box-sizing: border-box;
+        pointer-events: none;
     }
 
     .carousel label img {
@@ -96,6 +97,7 @@
   z-index: 3;
   transform: scale(1.1);
   left: 12.5%;
+  pointer-events: auto;
 }
     #s1:checked~.carousel #slide1,
     #s2:checked~.carousel #slide2,
@@ -482,7 +484,7 @@
         <h2>AirSight: AI-Powered Air Quality Prediction System<br /></h2>
       </header>
       <div id="carousel-wrapper">
-        <input type="radio" name="slider" id="s8" checked>
+    <input type="radio" name="slider3" id="s8" checked>
         <div class="carousel">
         <label for="s8" id="slide8">
 <video autoplay muted loop playsinline controls style="width: 100%; height: auto; border-radius: 10px;">
@@ -629,6 +631,16 @@
        newActive.classList.add('active');
        newActive.scrollIntoView({ behavior: 'smooth', inline: 'center' });
     }
+
+     window.addEventListener('load', () => {
+    const video = document.querySelector('#slide8 video');
+    if (video) {
+      video.muted = true;
+      video.play().catch(() => {
+        console.log('Autoplay prevented, user interaction required');
+      });
+    }
+  });
   </script>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.scrollex.min.js"></script>
