@@ -1,0 +1,645 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Prabhu Raj Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="description" content="Prabhu Raj - Data Analyst Portfolio showcasing Power BI, Python, and AI/ML projects">
+  <link rel="stylesheet" href="assets/css/main2.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+  </noscript>
+  <style>
+    /* ========================================
+       SKILLS SECTION
+    ======================================== */
+    .skills-section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 2rem;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .skill-item img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-item span {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    /* ========================================
+       CAROUSEL - REUSABLE COMPONENT
+       Each carousel is scoped by a unique wrapper class
+    ======================================== */
+    .carousel-wrapper {
+      width: 90%;
+      max-width: 1000px;
+      margin: 5vw auto;
+      perspective: 1000px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-wrapper input[type="radio"] {
+      display: none;
+    }
+
+    .carousel {
+      position: relative;
+      height: 50vw;
+      max-height: 500px;
+    }
+
+    .carousel label {
+      position: absolute;
+      top: 3vw;
+      width: 75%;
+      left: 12.5%;
+      opacity: 0;
+      transition: all 0.5s ease;
+      transform: scale(0.8);
+      z-index: 1;
+      cursor: pointer;
+      max-width: 100%;
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+
+    .carousel label img,
+    .carousel label video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      display: block;
+      object-fit: cover;
+    }
+
+    .dots {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .dots label {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      margin: 0 6px;
+      background: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    /* ========================================
+       CAROUSEL 1: Region Analysis (5 slides)
+    ======================================== */
+    #carousel-region #region-1:checked ~ .carousel #region-slide-1,
+    #carousel-region #region-2:checked ~ .carousel #region-slide-2,
+    #carousel-region #region-3:checked ~ .carousel #region-slide-3,
+    #carousel-region #region-4:checked ~ .carousel #region-slide-4,
+    #carousel-region #region-5:checked ~ .carousel #region-slide-5 {
+      opacity: 1;
+      z-index: 3;
+      transform: scale(1.1);
+      pointer-events: auto;
+    }
+
+    /* Right neighbor */
+    #carousel-region #region-1:checked ~ .carousel #region-slide-2,
+    #carousel-region #region-2:checked ~ .carousel #region-slide-3,
+    #carousel-region #region-3:checked ~ .carousel #region-slide-4,
+    #carousel-region #region-4:checked ~ .carousel #region-slide-5,
+    #carousel-region #region-5:checked ~ .carousel #region-slide-1 {
+      left: 60%;
+      opacity: 0.6;
+      transform: scale(0.9);
+      z-index: 2;
+      pointer-events: auto;
+    }
+
+    /* Left neighbor */
+    #carousel-region #region-1:checked ~ .carousel #region-slide-5,
+    #carousel-region #region-2:checked ~ .carousel #region-slide-1,
+    #carousel-region #region-3:checked ~ .carousel #region-slide-2,
+    #carousel-region #region-4:checked ~ .carousel #region-slide-3,
+    #carousel-region #region-5:checked ~ .carousel #region-slide-4 {
+      left: -20%;
+      opacity: 0.6;
+      transform: scale(0.9);
+      z-index: 2;
+      pointer-events: auto;
+    }
+
+    /* Active dot */
+    #carousel-region #region-1:checked ~ .dots label[for="region-1"],
+    #carousel-region #region-2:checked ~ .dots label[for="region-2"],
+    #carousel-region #region-3:checked ~ .dots label[for="region-3"],
+    #carousel-region #region-4:checked ~ .dots label[for="region-4"],
+    #carousel-region #region-5:checked ~ .dots label[for="region-5"] {
+      background: #333;
+    }
+
+    /* ========================================
+       CAROUSEL 2: Season Analysis (2 slides)
+    ======================================== */
+    #carousel-season #season-1:checked ~ .carousel #season-slide-1,
+    #carousel-season #season-2:checked ~ .carousel #season-slide-2 {
+      opacity: 1;
+      z-index: 3;
+      transform: scale(1.1);
+      left: 12.5%;
+      pointer-events: auto;
+    }
+
+    /* Neighbor positioning for 2-slide carousel */
+    #carousel-season #season-1:checked ~ .carousel #season-slide-2 {
+      left: 60%;
+      opacity: 0.6;
+      transform: scale(0.9);
+      z-index: 2;
+      pointer-events: auto;
+    }
+
+    #carousel-season #season-2:checked ~ .carousel #season-slide-1 {
+      left: -20%;
+      opacity: 0.6;
+      transform: scale(0.9);
+      z-index: 2;
+      pointer-events: auto;
+    }
+
+    /* Active dot */
+    #carousel-season #season-1:checked ~ .dots label[for="season-1"],
+    #carousel-season #season-2:checked ~ .dots label[for="season-2"] {
+      background: #333;
+    }
+
+    /* ========================================
+       CAROUSEL 3: AI/ML Video (1 slide)
+    ======================================== */
+    #carousel-aiml #aiml-1:checked ~ .carousel #aiml-slide-1 {
+      opacity: 1;
+      z-index: 3;
+      transform: scale(1.1);
+      left: 12.5%;
+      pointer-events: auto;
+    }
+
+    #carousel-aiml #aiml-1:checked ~ .dots label[for="aiml-1"] {
+      background: #333;
+    }
+
+    /* ========================================
+       MOBILE RESPONSIVENESS
+    ======================================== */
+    @media (max-width: 768px) {
+      .skill-item .actions.special {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .skill-item .button {
+        width: 100%;
+        max-width: 150px;
+        font-size: 0.9rem;
+        padding: 0.75em 1em;
+        text-align: center;
+        white-space: nowrap;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .carousel-wrapper {
+        width: 95%;
+      }
+
+      .carousel {
+        height: 60vw;
+      }
+
+      .carousel label {
+        width: 85%;
+        left: 7.5%;
+      }
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+  <div id="wrapper" class="fade-in">
+    <!-- Intro -->
+    <div id="intro">
+      <h1>Prabhu Raj Portfolio</h1>
+      <p>Motivated and skilled Data Analyst with a Post Graduate Diploma in Data Analytics and currently pursuing a Post Graduate program in Artificial Intelligence. Strong mathematical background enables effective analysis and interpretation of complex datasets. Proficient in managing large-scale data using Python, SQL, Power BI, and Tableau, with a solid foundation in data visualization, as well as basic knowledge of machine learning and Natural Language Processing (NLP). Possess foundational knowledge in web development using HTML and CSS.</p>
+      <p><a href="https://www.linkedin.com/in/prabhu-raj-6022b679">@PrabhuRajSamrajLinkedin</a></p>
+      <ul class="actions">
+        <li><a href="#main" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+      </ul>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+      <a href="#" class="logo">Prabhu the Data Specialist</a>
+    </header>
+
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="links">
+        <li class="active"><a href="#" data-target="home">Home</a></li>
+        <li><a href="#" data-target="powerbi">Power BI Projects</a></li>
+        <li><a href="#" data-target="python">Python Projects</a></li>
+        <li><a href="#" data-target="aiml">AI/ML Projects</a></li>
+      </ul>
+      <ul class="icons">
+        <li><a href="https://www.linkedin.com/in/prabhu-raj-6022b679" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="main">
+      
+      <!-- ==================== HOME/SKILLS ==================== -->
+      <section id="home" class="content-section tab" style="display:block;">
+        <section class="skills-section">
+          <h2>Technical Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <img src="images/icons_Svg/python-original.svg" alt="Python">
+              <span>Python</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/power-bi.png" alt="Power BI">
+              <span>Power BI</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/numpy-original.svg" alt="NumPy">
+              <span>NumPy</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/tableau-software.svg" alt="Tableau">
+              <span>Tableau</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/Amazon-S3-Logo.svg" alt="AWS S3">
+              <span>AWS S3</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/salesforce-2.svg" alt="Salesforce">
+              <span>Salesforce</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/Apache Kafka.svg" alt="Kafka">
+              <span>Kafka</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/Microsoft_Office_Excel_(2019–present).svg" alt="Excel">
+              <span>MS Excel</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/apachespark-original.svg" alt="Spark">
+              <span>Spark</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/mysql-original.svg" alt="SQL">
+              <span>SQL</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/pandas-original.svg" alt="Pandas">
+              <span>Pandas</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/Smartsheet-02.svg" alt="SmartSheet">
+              <span>Smartsheet</span>
+            </div>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-item">
+              <header>
+                <h2><a href="#">Power BI Projects</a></h2>
+              </header>
+              <ul class="actions special">
+                <li><a href="#" class="button tab-trigger" data-target="powerbi">View Project</a></li>
+              </ul>
+            </div>
+            <div class="skill-item">
+              <header>
+                <h2><a href="#">Python Projects</a></h2>
+              </header>
+              <ul class="actions special">
+                <li><a href="#" class="button tab-trigger" data-target="python">View Project</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- ==================== POWER BI PROJECTS ==================== -->
+      <section class="content-section tab" id="powerbi" style="display:none;">
+        <section class="posts">
+          <article>
+            <header>
+              <span class="date">August, 2024</span>
+              <h3>Trans Mountain Expansion</h3>
+            </header>
+            <p><b>Throughput, Capacity & Barrels (2006–2020)</b></p>
+            <a href="#" class="image fit"><img src="images/Dashboard 1.png" alt="Trans Mountain Dashboard 1" /></a>
+            <p>This dashboard visualizes oil barrels produced vs. producible, pipeline throughput vs. capacity over time, and trade direction. It highlights declining throughput in recent years despite large remaining production potential. Sankey and bar charts show regional trade and annual throughput variations.</p>
+            
+            <p><b>Apportionment for Pipelines</b></p>
+            <a href="#" class="image fit"><img src="images/Dashboard 2.png" alt="Trans Mountain Dashboard 2" /></a>
+            <p>Displays accepted vs. original oil shipment nominations across pipelines from 2006 to 2020. It shows which pipelines had the most apportionment and visualizes acceptance rates by year and line. Useful for understanding congestion and priority allocations in the network.</p>
+            
+            <p><b>Product Throughput by Trade & Region</b></p>
+            <a href="#" class="image fit"><img src="images/Dashboard 3.png" alt="Trans Mountain Dashboard 3" /></a>
+            <p>This dashboard breaks down throughput (1000 m³/d) by oil product types and trade direction from 2006 to 2020. Users can interact using buttons to filter by trade types like IntraCanada, Import, or Export. It highlights how different types of oil dominate throughput, especially in regions.</p>
+          </article>
+
+          <article>
+            <header>
+              <span class="date">Sep, 2024</span>
+              <h3>Sales Analysis</h3>
+            </header>
+            <p><b>Sales Performance Dashboard</b></p>
+            <a href="#" class="image fit"><img src="images/Performance Analysis.jpeg" alt="Sales Performance Dashboard" /></a>
+            <p>This dashboard segments customers based on sales volume, order frequency, and profit, helping identify high-value clients. It tracks profit and sales by region and category, with filters to drill down into Furniture, Office Supplies, or Technology. Time series and pie charts reveal monthly sales trends and how each product category contributes to overall revenue and profit.</p>
+          </article>
+
+          <article>
+            <header>
+              <span class="date">Nov, 2024</span>
+              <h3>Movie Analysis</h3>
+            </header>
+            <p><b>TMDB Movie Analysis Dashboard</b></p>
+            <a href="#" class="image fit"><img src="images/MovieAnalysis.jpeg" alt="TMDB Movie Analysis Dashboard" /></a>
+            <p>This dashboard analyses 8,993 movies with a total revenue of $2.27T, highlighting top directors, producers, average scores, and global earnings. It features interactive parameters, filtering by year, director, and score range. Visuals include revenue vs. budget correlation, monthly movie releases, and regional revenue distribution.</p>
+          </article>
+
+          <article>
+            <header>
+              <span class="date">Feb, 2025</span>
+              <h3>Disaster Analysis</h3>
+            </header>
+            <p><b>Disaster Analysis – Focused on Earthquakes</b></p>
+            <a href="#" class="image fit"><img src="images/Disaster Analysis.jpeg" alt="Disaster Analysis Dashboard" /></a>
+            <p>This dashboard offers a global analysis of disasters, primarily earthquakes, covering average magnitude, depth, significance, and impact across 214 countries and 22K+ cities. It includes filters by magnitude, year, depth, and disaster type. Visuals highlight time-of-day patterns, continent-level distribution, and correlations between magnitude, depth, and impact.</p>
+          </article>
+        </section>
+      </section>
+
+      <!-- ==================== PYTHON PROJECTS ==================== -->
+      <section class="content-section tab" id="python" style="display:none;">
+        <section>
+          <article>
+            <header>
+              <span class="date">August, 2024</span>
+              <h2>Global Superstore – Revenue Optimization with Python</h2>
+              <h3>Revenue Optimization for Underperforming Regions</h3>
+            </header>
+
+            <!-- CAROUSEL 1: Region Analysis -->
+            <div id="carousel-region" class="carousel-wrapper">
+              <input type="radio" name="region-slider" id="region-1" checked>
+              <input type="radio" name="region-slider" id="region-2">
+              <input type="radio" name="region-slider" id="region-3">
+              <input type="radio" name="region-slider" id="region-4">
+              <input type="radio" name="region-slider" id="region-5">
+
+              <div class="carousel">
+                <label for="region-1" id="region-slide-1"><img src="images/python/canada_py.jpeg" alt="Canada Analysis"></label>
+                <label for="region-2" id="region-slide-2"><img src="images/python/caribean_py.jpeg" alt="Caribbean Analysis"></label>
+                <label for="region-3" id="region-slide-3"><img src="images/python/central_py.jpeg" alt="Central Analysis"></label>
+                <label for="region-4" id="region-slide-4"><img src="images/python/west_py.jpeg" alt="West Analysis"></label>
+                <label for="region-5" id="region-slide-5"><img src="images/python/East_py.jpeg" alt="East Analysis"></label>
+              </div>
+
+              <div class="dots">
+                <label for="region-1"></label>
+                <label for="region-2"></label>
+                <label for="region-3"></label>
+                <label for="region-4"></label>
+                <label for="region-5"></label>
+              </div>
+            </div>
+
+            <p>To enhance revenue in underperforming regions, a multi-faceted pricing strategy was developed using conditional business rules:</p>
+            <ul>
+              <li><strong>Demand-Based Adjustment:</strong> Prices were increased for high-demand items using a predefined uplift factor.</li>
+              <li><strong>Premium Increase:</strong> Targeted price increments were applied to premium product categories to maximize margins.</li>
+              <li><strong>Bundling Strategy:</strong> Discounts were offered on grouped products to encourage higher volume sales.</li>
+              <li><strong>Dynamic Pricing:</strong> Prices were dynamically adjusted based on demand forecasts generated through ARIMA modeling.</li>
+            </ul>
+            <p>Each strategy was programmatically mapped to relevant product segments using pre-defined tags. Adjusted sales values were then incorporated into forecasting models to evaluate revenue impact and effectiveness.</p>
+          </article>
+
+          <article>
+            <header>
+              <span class="date">Nov, 2024</span>
+              <h3>Revenue Optimization for Low Performing Seasons</h3>
+            </header>
+
+            <!-- CAROUSEL 2: Season Analysis -->
+            <div id="carousel-season" class="carousel-wrapper">
+              <input type="radio" name="season-slider" id="season-1" checked>
+              <input type="radio" name="season-slider" id="season-2">
+
+              <div class="carousel">
+                <label for="season-1" id="season-slide-1"><img src="images/python/Season1.jpeg" alt="Season Analysis 1"></label>
+                <label for="season-2" id="season-slide-2"><img src="images/python/Season2.jpeg" alt="Season Analysis 2"></label>
+              </div>
+
+              <div class="dots">
+                <label for="season-1"></label>
+                <label for="season-2"></label>
+              </div>
+            </div>
+
+            <p>Implemented strategies to enhance year-round sales and reduce the impact of seasonal fluctuations:</p>
+            <ul>
+              <li><strong>Demand-Based Adjustment:</strong> Prices were increased for high-demand items using a predefined uplift factor.</li>
+              <li><strong>Premium Increase:</strong> Targeted price increments were applied to premium product categories to maximize margins.</li>
+              <li><strong>Bundling Strategy:</strong> Discounts were offered on grouped products to encourage higher volume sales.</li>
+              <li><strong>Dynamic Pricing:</strong> Prices were dynamically adjusted based on demand forecasts generated through ARIMA modeling.</li>
+            </ul>
+            <p>Each strategy was programmatically mapped to relevant product segments using pre-defined tags. Adjusted sales values were then incorporated into forecasting models to evaluate revenue impact and effectiveness.</p>
+          </article>
+        </section>
+      </section>
+
+      <!-- ==================== AI/ML PROJECTS ==================== -->
+      <section class="content-section tab" id="aiml" style="display:none;">
+        <section>
+          <article>
+            <header>
+              <span class="date">August, 2024</span>
+              <h2>AirSight: AI-Powered Air Quality Prediction System</h2>
+            </header>
+
+            <!-- CAROUSEL 3: AI/ML Video -->
+            <div id="carousel-aiml" class="carousel-wrapper">
+              <input type="radio" name="aiml-slider" id="aiml-1" checked>
+
+              <div class="carousel">
+                <label for="aiml-1" id="aiml-slide-1">
+                  <video autoplay muted loop playsinline controls>
+                    <source src="images/AirQualityVideo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </label>
+              </div>
+
+              <div class="dots">
+                <label for="aiml-1"></label>
+              </div>
+            </div>
+
+            <p><strong>Overview:</strong> An intelligent web platform that predicts Air Quality Index (AQI) using machine learning, helping communities make informed decisions about outdoor activities and health precautions. Poor air quality contributes to respiratory diseases affecting millions worldwide.</p>
+            
+            <p><strong>Technical Implementation:</strong></p>
+            <ul>
+              <li><strong>Dataset:</strong> EPA Air Quality System with 33+ environmental features</li>
+              <li><strong>ML Algorithms:</strong> Implemented and compared 4 algorithms - Gradient Boosting, Random Forest, Extra Trees, and XGBoost</li>
+              <li><strong>Model Performance:</strong> Achieved 96.2% accuracy (R² score) with the best-performing model</li>
+              <li><strong>Pollutants Tracked:</strong> PM2.5, PM10, O₃ (Ozone), NO₂, SO₂, and CO</li>
+              <li><strong>Tech Stack:</strong> Python, Scikit-learn, XGBoost, Flask/Django, JavaScript, Cloud Deployment</li>
+            </ul>
+            
+            <p><strong>Key Features:</strong></p>
+            <ul>
+              <li><strong>Real-time Predictions:</strong> Live AQI predictions with 7-day weather-integrated forecasts</li>
+              <li><strong>Interactive Dashboards:</strong> Historical trend analysis with dynamic visualizations and calendar views</li>
+              <li><strong>Pollutant Monitoring:</strong> Individual pollutant tracking and concentration analysis</li>
+              <li><strong>Health Recommendations:</strong> Personalized suggestions based on current and predicted air quality levels</li>
+              <li><strong>Model Insights:</strong> Professional dashboard displaying model performance metrics and comparison</li>
+            </ul>
+            
+            <p><strong>Impact:</strong> Deployed as a production-ready cloud-based solution providing actionable environmental health insights for community well-being and proactive health measures.</p>
+          </article>
+        </section>
+      </section>
+
+      <!-- ==================== CONTACT ==================== -->
+      <section class="split contact">
+        <section class="alt">
+          <h3>Address</h3>
+          <p>Canada<br />Alberta, Calgary</p>
+        </section>
+        <section>
+          <h3>Phone</h3>
+          <p>(369) 999 3584</p>
+        </section>
+        <section>
+          <h3>Email</h3>
+          <p>prabhuraj.sp@gmail.com</p>
+        </section>
+        <section>
+          <h3>Social</h3>
+          <ul class="icons alt">
+            <li><a href="https://www.linkedin.com/in/prabhu-raj-6022b679/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+          </ul>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  
+  <script>
+    (function() {
+      'use strict';
+
+      // ========================================
+      // TAB NAVIGATION
+      // ========================================
+      const allSections = document.querySelectorAll('.content-section');
+
+      function activateTab(target) {
+        // Update nav active state
+        document.querySelectorAll('#nav .links li').forEach(li => li.classList.remove('active'));
+        const activeNavLink = document.querySelector(`#nav [data-target="${target}"]`);
+        if (activeNavLink) {
+          activeNavLink.closest('li').classList.add('active');
+        }
+
+        // Show/hide sections
+        allSections.forEach(section => {
+          section.style.display = section.id === target ? 'block' : 'none';
+        });
+
+        // Close mobile nav panel if open
+        document.body.classList.remove('is-navPanel-visible');
+
+        // Scroll to top of main content
+        const mainEl = document.getElementById('main');
+        if (mainEl) {
+          mainEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      // Bind click events to all tab triggers
+      document.querySelectorAll('[data-target]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          activateTab(this.getAttribute('data-target'));
+        });
+      });
+
+      // ========================================
+      // VIDEO AUTOPLAY HANDLER
+      // ========================================
+      function initVideoAutoplay() {
+        const videos = document.querySelectorAll('.carousel video');
+        videos.forEach(video => {
+          video.muted = true;
+          video.play().catch(() => {
+            console.log('Autoplay prevented, user interaction required');
+          });
+        });
+      }
+
+      // Initialize on page load
+      window.addEventListener('load', initVideoAutoplay);
+
+      // Re-initialize video when AI/ML tab is shown
+      const originalActivateTab = activateTab;
+      window.activateTab = function(target) {
+        originalActivateTab(target);
+        if (target === 'aiml') {
+          setTimeout(initVideoAutoplay, 100);
+        }
+      };
+
+    })();
+  </script>
+</body>
+
+</html>
