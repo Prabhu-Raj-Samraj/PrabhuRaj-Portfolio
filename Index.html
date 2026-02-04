@@ -286,7 +286,19 @@
 #carousel-kg #kg-3:checked ~ .dots label[for="kg-3"] {
   background: #333;
 }
+#carousel-kg .carousel label {
+  left: 12.5% !important;
+  opacity: 0;
+  transform: scale(0.95);
+}
 
+#carousel-kg #kg-1:checked ~ .carousel #kg-slide-1,
+#carousel-kg #kg-2:checked ~ .carousel #kg-slide-2,
+#carousel-kg #kg-3:checked ~ .carousel #kg-slide-3 {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 3;
+}
   </style>
 </head>
 
