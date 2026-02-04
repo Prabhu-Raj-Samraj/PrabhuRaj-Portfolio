@@ -244,6 +244,49 @@
         left: 7.5%;
       }
     }
+
+    /* ========================================
+   CAROUSEL: Knowledge Graph (3 slides)
+======================================== */
+#carousel-kg #kg-1:checked ~ .carousel #kg-slide-1,
+#carousel-kg #kg-2:checked ~ .carousel #kg-slide-2,
+#carousel-kg #kg-3:checked ~ .carousel #kg-slide-3 {
+  opacity: 1;
+  z-index: 3;
+  transform: scale(1.1);
+  left: 12.5%;
+  pointer-events: auto;
+}
+
+/* Right neighbor */
+#carousel-kg #kg-1:checked ~ .carousel #kg-slide-2,
+#carousel-kg #kg-2:checked ~ .carousel #kg-slide-3,
+#carousel-kg #kg-3:checked ~ .carousel #kg-slide-1 {
+  left: 60%;
+  opacity: 0.6;
+  transform: scale(0.9);
+  z-index: 2;
+  pointer-events: auto;
+}
+
+/* Left neighbor */
+#carousel-kg #kg-1:checked ~ .carousel #kg-slide-3,
+#carousel-kg #kg-2:checked ~ .carousel #kg-slide-1,
+#carousel-kg #kg-3:checked ~ .carousel #kg-slide-2 {
+  left: -20%;
+  opacity: 0.6;
+  transform: scale(0.9);
+  z-index: 2;
+  pointer-events: auto;
+}
+
+/* Active dot */
+#carousel-kg #kg-1:checked ~ .dots label[for="kg-1"],
+#carousel-kg #kg-2:checked ~ .dots label[for="kg-2"],
+#carousel-kg #kg-3:checked ~ .dots label[for="kg-3"] {
+  background: #333;
+}
+
   </style>
 </head>
 
