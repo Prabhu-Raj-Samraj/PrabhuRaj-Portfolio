@@ -286,28 +286,45 @@
 #carousel-kg #kg-3:checked ~ .dots label[for="kg-3"] {
   background: #333;
 }
-#carousel-kg .carousel label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  overflow: visible; /* important */
-}
-    #carousel-kg .carousel img {
+
+#carousel-kg img,
+#carousel-kg video {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
-    #carousel-kg .carousel label {
-  top: auto !important;
-  transform: none !important;
-}
+
 #carousel-kg #kg-1:checked ~ .carousel #kg-slide-1,
 #carousel-kg #kg-2:checked ~ .carousel #kg-slide-2,
 #carousel-kg #kg-3:checked ~ .carousel #kg-slide-3 {
   opacity: 1;
   transform: scale(1);
   z-index: 3;
+}
+    #carousel-kg .carousel {
+  height: auto;
+  min-height: 520px;
+}
+#carousel-kg .carousel label {
+  display: none;
+}
+
+#carousel-kg #kg-1:checked ~ .carousel #kg-slide-1,
+#carousel-kg #kg-2:checked ~ .carousel #kg-slide-2,
+#carousel-kg #kg-3:checked ~ .carousel #kg-slide-3 {
+  display: flex;
+  opacity: 1;
+  z-index: 10;
+  pointer-events: auto;
+}
+#carousel-kg .carousel label {
+  position: absolute;
+  inset: 0;               /* 🔥 replaces top/left/width hacks */
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: none !important;
+  pointer-events: none;
 }
   </style>
 </head>
