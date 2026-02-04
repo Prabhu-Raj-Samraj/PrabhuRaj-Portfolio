@@ -287,11 +287,21 @@
   background: #333;
 }
 #carousel-kg .carousel label {
-  left: 12.5% !important;
-  opacity: 0;
-  transform: scale(0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: visible; /* important */
 }
-
+    #carousel-kg .carousel img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+    #carousel-kg .carousel label {
+  top: auto !important;
+  transform: none !important;
+}
 #carousel-kg #kg-1:checked ~ .carousel #kg-slide-1,
 #carousel-kg #kg-2:checked ~ .carousel #kg-slide-2,
 #carousel-kg #kg-3:checked ~ .carousel #kg-slide-3 {
