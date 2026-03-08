@@ -46,7 +46,6 @@
 
     /* ========================================
        CAROUSEL - REUSABLE COMPONENT
-       Each carousel is scoped by a unique wrapper class
     ======================================== */
     .carousel-wrapper {
       width: 90%;
@@ -63,35 +62,35 @@
 
     .carousel {
       position: relative;
-  height: clamp(280px, 45vw, 520px);
-  max-height: 520px;
-  overflow: hidden; 
+      height: clamp(280px, 45vw, 520px);
+      max-height: 520px;
+      overflow: hidden;
     }
 
     .carousel label {
-  position: absolute;
-  top: 3vw;
-  width: 75%;
-  height: 100%;          /* ✅ ADD THIS */
-  left: 12.5%;
-  opacity: 0;
-  transition: all 0.5s ease;
-  transform: scale(0.8);
-  z-index: 1;
-  cursor: pointer;
-  pointer-events: none;
-}
+      position: absolute;
+      top: 3vw;
+      width: 75%;
+      height: 100%;
+      left: 12.5%;
+      opacity: 0;
+      transition: all 0.5s ease;
+      transform: scale(0.8);
+      z-index: 1;
+      cursor: pointer;
+      pointer-events: none;
+    }
 
-   .carousel label img,
-.carousel label video {
-  width: 100%;
-  height: 100%;               /* ✅ force fit */
-  object-fit: contain;        /* ✅ for diagrams */
-  object-position: center;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  display: block;
-}
+    .carousel label img,
+    .carousel label video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      display: block;
+    }
 
     .dots {
       text-align: center;
@@ -123,7 +122,6 @@
       pointer-events: auto;
     }
 
-    /* Right neighbor */
     #carousel-region #region-1:checked ~ .carousel #region-slide-2,
     #carousel-region #region-2:checked ~ .carousel #region-slide-3,
     #carousel-region #region-3:checked ~ .carousel #region-slide-4,
@@ -136,7 +134,6 @@
       pointer-events: auto;
     }
 
-    /* Left neighbor */
     #carousel-region #region-1:checked ~ .carousel #region-slide-5,
     #carousel-region #region-2:checked ~ .carousel #region-slide-1,
     #carousel-region #region-3:checked ~ .carousel #region-slide-2,
@@ -149,7 +146,6 @@
       pointer-events: auto;
     }
 
-    /* Active dot */
     #carousel-region #region-1:checked ~ .dots label[for="region-1"],
     #carousel-region #region-2:checked ~ .dots label[for="region-2"],
     #carousel-region #region-3:checked ~ .dots label[for="region-3"],
@@ -170,7 +166,6 @@
       pointer-events: auto;
     }
 
-    /* Neighbor positioning for 2-slide carousel */
     #carousel-season #season-1:checked ~ .carousel #season-slide-2 {
       left: 60%;
       opacity: 0.6;
@@ -187,7 +182,6 @@
       pointer-events: auto;
     }
 
-    /* Active dot */
     #carousel-season #season-1:checked ~ .dots label[for="season-1"],
     #carousel-season #season-2:checked ~ .dots label[for="season-2"] {
       background: #333;
@@ -205,6 +199,43 @@
     }
 
     #carousel-aiml #aiml-1:checked ~ .dots label[for="aiml-1"] {
+      background: #333;
+    }
+
+    /* ========================================
+       CAROUSEL 4: Knowledge Graph (2 slides)
+    ======================================== */
+    #carousel-kg .carousel {
+      height: clamp(280px, 45vw, 520px);
+      max-height: 520px;
+    }
+
+    #carousel-kg #kg-2:checked ~ .carousel #kg-slide-2,
+    #carousel-kg #kg-3:checked ~ .carousel #kg-slide-3 {
+      opacity: 1;
+      z-index: 3;
+      transform: scale(1.1);
+      pointer-events: auto;
+    }
+
+    #carousel-kg #kg-2:checked ~ .carousel #kg-slide-3 {
+      left: 60%;
+      opacity: 0.6;
+      transform: scale(0.9);
+      z-index: 2;
+      pointer-events: auto;
+    }
+
+    #carousel-kg #kg-3:checked ~ .carousel #kg-slide-2 {
+      left: -20%;
+      opacity: 0.6;
+      transform: scale(0.9);
+      z-index: 2;
+      pointer-events: auto;
+    }
+
+    #carousel-kg #kg-2:checked ~ .dots label[for="kg-2"],
+    #carousel-kg #kg-3:checked ~ .dots label[for="kg-3"] {
       background: #333;
     }
 
@@ -244,88 +275,6 @@
         left: 7.5%;
       }
     }
-
-    /* ========================================
-   CAROUSEL: Knowledge Graph (3 slides)
-======================================== */
-#carousel-kg #kg-1:checked ~ .carousel #kg-slide-1,
-#carousel-kg #kg-2:checked ~ .carousel #kg-slide-2,
-#carousel-kg #kg-3:checked ~ .carousel #kg-slide-3 {
-  opacity: 1;
-  z-index: 3;
-  transform: scale(1.1);
-  left: 12.5%;
-  pointer-events: auto;
-}
-
-/* Right neighbor */
-#carousel-kg #kg-1:checked ~ .carousel #kg-slide-2,
-#carousel-kg #kg-2:checked ~ .carousel #kg-slide-3,
-#carousel-kg #kg-3:checked ~ .carousel #kg-slide-1 {
-  left: 60%;
-  opacity: 0.6;
-  transform: scale(0.9);
-  z-index: 2;
-  pointer-events: auto;
-}
-
-/* Left neighbor */
-#carousel-kg #kg-1:checked ~ .carousel #kg-slide-3,
-#carousel-kg #kg-2:checked ~ .carousel #kg-slide-1,
-#carousel-kg #kg-3:checked ~ .carousel #kg-slide-2 {
-  left: -20%;
-  opacity: 0.6;
-  transform: scale(0.9);
-  z-index: 2;
-  pointer-events: auto;
-}
-
-/* Active dot */
-#carousel-kg #kg-1:checked ~ .dots label[for="kg-1"],
-#carousel-kg #kg-2:checked ~ .dots label[for="kg-2"],
-#carousel-kg #kg-3:checked ~ .dots label[for="kg-3"] {
-  background: #333;
-}
-
-#carousel-kg img,
-#carousel-kg video {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-#carousel-kg #kg-1:checked ~ .carousel #kg-slide-1,
-#carousel-kg #kg-2:checked ~ .carousel #kg-slide-2,
-#carousel-kg #kg-3:checked ~ .carousel #kg-slide-3 {
-  opacity: 1;
-  transform: scale(1);
-  z-index: 3;
-}
-    #carousel-kg .carousel {
-  height: auto;
-  min-height: 520px;
-}
-#carousel-kg .carousel label {
-  display: none;
-}
-
-#carousel-kg #kg-1:checked ~ .carousel #kg-slide-1,
-#carousel-kg #kg-2:checked ~ .carousel #kg-slide-2,
-#carousel-kg #kg-3:checked ~ .carousel #kg-slide-3 {
-  display: flex;
-  opacity: 1;
-  z-index: 10;
-  pointer-events: auto;
-}
-#carousel-kg .carousel label {
-  position: absolute;
-  inset: 0;               /* 🔥 replaces top/left/width hacks */
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transform: none !important;
-  pointer-events: none;
-}
   </style>
 </head>
 
@@ -354,10 +303,9 @@ Proven ability to integrate LangChain, LlamaIndex, Hugging Face models, and clou
     <nav id="nav">
       <ul class="links">
         <li class="active"><a href="#" data-target="home">Home</a></li>
-         <li><a href="#" data-target="aiml">AI/ML Projects</a></li>
+        <li><a href="#" data-target="aiml">AI/ML Projects</a></li>
         <li><a href="#" data-target="powerbi">Power BI Projects</a></li>
         <li><a href="#" data-target="python">Python Projects</a></li>
-       
       </ul>
       <ul class="icons">
         <li><a href="https://www.linkedin.com/in/prabhu-raj-6022b679" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
@@ -366,131 +314,107 @@ Proven ability to integrate LangChain, LlamaIndex, Hugging Face models, and clou
 
     <!-- Main Content -->
     <div id="main">
-      
+
       <!-- ==================== HOME/SKILLS ==================== -->
       <section id="home" class="content-section tab" style="display:block;">
         <section class="skills-section">
-         <!-- Add this to your skills-grid section -->
-
-<h2>Technical Skills</h2>
-<div class="skills-grid">
-  <!-- Programming -->
-  <div class="skill-item">
-    <img src="images/icons_Svg/python-original.svg" alt="Python">
-    <span>Python</span>
-  </div>
-  <div class="skill-item">
-    <img src="images/icons_Svg/r-original.svg" alt="R">
-    <span>R</span>
-  </div>
-  <div class="skill-item">
-    <img src="images/icons_Svg/mysql-original.svg" alt="SQL">
-    <span>SQL</span>
-  </div>
-  
-  <!-- ML/AI -->
-  <div class="skill-item">
-    <img src="images/icons_Svg/tensorflow-original.svg" alt="TensorFlow">
-    <span>TensorFlow</span>
-  </div>
-  <div class="skill-item">
-    <img src="images/icons_Svg/keras-original.svg" alt="Keras">
-    <span>Keras</span>
-  </div>
-  <div class="skill-item">
-    <img src="images/icons_Svg/pytorch-original.svg" alt="PyTorch">
-    <span>PyTorch</span>
-  </div>
-  
-  <!-- API -->
-  <div class="skill-item">
-    <img src="images/icons_Svg/fastapi-original.svg" alt="FastAPI">
-    <span>FastAPI</span>
-  </div>
-  <div class="skill-item">
-    <img src="images/icons_Svg/flask-original.svg" alt="Flask">
-    <span>Flask</span>
-  </div>
-  
-  <!-- Gen AI -->
-  <div class="skill-item">
-    <img src="images/icons_Svg/langchain.svg" alt="LangChain">
-    <span>LangChain</span>
-  </div>
-  <div class="skill-item">
-    <img src="images/icons_Svg/huggingface.svg" alt="Hugging Face">
-    <span>Hugging Face</span>
-  </div>
-  <div class="skill-item">
-    <img src="images/icons_Svg/gemini.svg" alt="Gemini">
-    <span>Gemini</span>
-  </div>
-  
-  <!-- Data -->
-  <div class="skill-item">
-    <img src="images/icons_Svg/apachespark-original.svg" alt="Spark">
-    <span>Spark</span>
-  </div>
-  <div class="skill-item">
-    <img src="images/icons_Svg/pandas-original.svg" alt="Pandas">
-    <span>Pandas</span>
-  </div>
-  <div class="skill-item">
-    <img src="images/icons_Svg/numpy-original.svg" alt="NumPy">
-    <span>NumPy</span>
-  </div>
-  
-  <!-- Knowledge -->
-  <div class="skill-item">
-    <img src="images/icons_Svg/neo4j-original.svg" alt="Neo4j">
-    <span>Neo4j</span>
-  </div>
-  
-  <!-- MLOps -->
-  <div class="skill-item">
-    <img src="images/icons_Svg/docker-original.svg" alt="Docker">
-    <span>Docker</span>
-  </div>
-  <div class="skill-item">
-    <img src="images/icons_Svg/git-original.svg" alt="Git">
-    <span>Git</span>
-  </div>
-  <div class="skill-item">
-    <img src="images/icons_Svg/cicd-githubactions.svg" alt="CI/CD">
-    <span>CI/CD</span>
-  </div>
-  
-  <!-- Cloud -->
-  <div class="skill-item">
-    <img src="images/icons_Svg/aws-sagemaker.svg" alt="AWS SageMaker">
-    <span>SageMaker</span>
-  </div>
-  <div class="skill-item">
-    <img src="images/icons_Svg/power-bi.png" alt="Power BI">
-    <span>Power BI</span>
-  </div>
-  <div class="skill-item">
-    <img src="images/icons_Svg/tableau-software.svg" alt="Tableau">
-    <span>Tableau</span>
-  </div>
-  
-  <!-- Responsible AI -->
-  <div class="skill-item">
-    <img src="images/icons_Svg/responsible-ai.svg" alt="Responsible AI">
-    <span>Ethical AI</span>
-  </div>
-</div>
-
-           <!--                </section>
-               <section id="skills" class="skills-section"> -->
+          <h2>Technical Skills</h2>
           <div class="skills-grid">
+            <div class="skill-item">
+              <img src="images/icons_Svg/python-original.svg" alt="Python">
+              <span>Python</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/r-original.svg" alt="R">
+              <span>R</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/mysql-original.svg" alt="SQL">
+              <span>SQL</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/tensorflow-original.svg" alt="TensorFlow">
+              <span>TensorFlow</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/keras-original.svg" alt="Keras">
+              <span>Keras</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/pytorch-original.svg" alt="PyTorch">
+              <span>PyTorch</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/fastapi-original.svg" alt="FastAPI">
+              <span>FastAPI</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/flask-original.svg" alt="Flask">
+              <span>Flask</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/langchain.svg" alt="LangChain">
+              <span>LangChain</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/huggingface.svg" alt="Hugging Face">
+              <span>Hugging Face</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/gemini.svg" alt="Gemini">
+              <span>Gemini</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/apachespark-original.svg" alt="Spark">
+              <span>Spark</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/pandas-original.svg" alt="Pandas">
+              <span>Pandas</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/numpy-original.svg" alt="NumPy">
+              <span>NumPy</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/neo4j-original.svg" alt="Neo4j">
+              <span>Neo4j</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/docker-original.svg" alt="Docker">
+              <span>Docker</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/git-original.svg" alt="Git">
+              <span>Git</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/cicd-githubactions.svg" alt="CI/CD">
+              <span>CI/CD</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/aws-sagemaker.svg" alt="AWS SageMaker">
+              <span>SageMaker</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/power-bi.png" alt="Power BI">
+              <span>Power BI</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/tableau-software.svg" alt="Tableau">
+              <span>Tableau</span>
+            </div>
+            <div class="skill-item">
+              <img src="images/icons_Svg/responsible-ai.svg" alt="Responsible AI">
+              <span>Ethical AI</span>
+            </div>
+          </div>
 
+          <div class="skills-grid">
             <div class="skill-item">
               <header>
                 <span class="date"></span>
-                <h2><a href="PR_PowerBI.html">Power BI Projects<br />
-                  </a>
-                </h2>
+                <h2><a href="PR_PowerBI.html">Power BI Projects<br /></a></h2>
               </header>
               <p></p>
               <ul class="actions special">
@@ -500,84 +424,71 @@ Proven ability to integrate LangChain, LlamaIndex, Hugging Face models, and clou
             <div class="skill-item">
               <header>
                 <span class="date"></span>
-                <h2><a href="PR_Python.html">Python Projects<br />
-                  </a>
-                </h2>
+                <h2><a href="PR_Python.html">Python Projects<br /></a></h2>
               </header>
               <p></p>
               <ul class="actions special">
                 <li><a href="#" class="button tab-trigger" data-target="python">View Project</a></li>
               </ul>
-            </div></div>
+            </div>
+          </div>
         </section>
       </section>
-   <!-- ==================== AI/ML PROJECTS ==================== -->
+
+      <!-- ==================== AI/ML PROJECTS ==================== -->
       <section class="content-section tab" id="aiml" style="display:none;">
         <section>
-  <article>
-    <header>
-      <span class="date">Dec, 2025</span>
-      <h2>Humanitarian Knowledge Graph & RAG System</h2>
-      <p><strong>End-to-End Generative AI Pipeline</strong></p>
-    </header>
+          <article>
+            <header>
+              <span class="date">Dec, 2025</span>
+              <h2>Humanitarian Knowledge Graph & RAG System</h2>
+              <p><strong>End-to-End Generative AI Pipeline</strong></p>
+            </header>
 
-    <!-- CAROUSEL: Knowledge Graph & RAG Media -->
-    <div id="carousel-kg" class="carousel-wrapper">
-      <!-- <input type="radio" name="kg-slider" id="kg-1" > -->
-      <input type="radio" name="kg-slider" id="kg-2" checked>
-      <input type="radio" name="kg-slider" id="kg-3">
+            <!-- CAROUSEL: Knowledge Graph & RAG Media -->
+            <div id="carousel-kg" class="carousel-wrapper">
+              <input type="radio" name="kg-slider" id="kg-2" checked>
+              <input type="radio" name="kg-slider" id="kg-3">
 
-      <div class="carousel">
-        <!-- Slide 1: Video -->
-        <!-- <label for="kg-1" id="kg-slide-1">
-          <video autoplay muted loop playsinline controls>
-            <source src="images/kg/reliefgraph_demo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </label> -->
+              <div class="carousel">
+                <label for="kg-2" id="kg-slide-2">
+                  <img src="images/kg/architecture_diagram.jpg" alt="Knowledge Graph Architecture Diagram">
+                </label>
+                <label for="kg-3" id="kg-slide-3">
+                  <img src="images/kg/neo4j_graph_view.jpg" alt="Neo4j Knowledge Graph Visualization">
+                </label>
+              </div>
 
-        <!-- Slide 2: Architecture Diagram -->
-        <label for="kg-2" id="kg-slide-2">
-          <img src="images/kg/architecture_diagram.jpg" alt="Knowledge Graph Architecture Diagram">
-        </label>
+              <div class="dots">
+                <label for="kg-2"></label>
+                <label for="kg-3"></label>
+              </div>
+            </div>
 
-        <!-- Slide 3: Knowledge Graph Visualization -->
-        <label for="kg-3" id="kg-slide-3">
-          <img src="images/kg/neo4j_graph_view.jpg" alt="Neo4j Knowledge Graph Visualization">
-        </label>
-      </div>
+            <p><strong>Overview:</strong> Designed and engineered an end-to-end Generative AI system that transforms unstructured humanitarian reports into an AI-powered Knowledge Graph, enabling fast, context-aware insights for crisis response and decision-making.</p>
 
-      <div class="dots">
-        <label for="kg-1"></label>
-        <label for="kg-2"></label>
-        <!-- <label for="kg-3"></label> -->
-      </div>
-    </div>
+            <p><strong>Technical Implementation:</strong></p>
+            <ul>
+              <li><strong>Data Sources:</strong> ReliefWeb API (UN OCHA) – PDFs and metadata for Ukraine and South Sudan</li>
+              <li><strong>Document Processing:</strong> Automated ingestion and text extraction using Docling</li>
+              <li><strong>NLP Pipeline:</strong> Context-preserving chunking with metadata-aware windowing</li>
+              <li><strong>LLM Extraction:</strong> Prompt-engineered triplet generation (subject–relation–object)</li>
+              <li><strong>Knowledge Graph:</strong> Neo4j graph with enriched nodes, edges, and properties</li>
+              <li><strong>RAG Architecture:</strong> Graph-based RAG using embeddings and vector similarity</li>
+              <li><strong>Backend:</strong> FastAPI for query orchestration, caching, and response generation</li>
+            </ul>
 
-    <p><strong>Overview:</strong> Designed and engineered an end-to-end Generative AI system that transforms unstructured humanitarian reports into an AI-powered Knowledge Graph, enabling fast, context-aware insights for crisis response and decision-making.</p>
+            <p><strong>Key Features:</strong></p>
+            <ul>
+              <li>Natural language querying over humanitarian knowledge</li>
+              <li>Semantic + graph-based retrieval for high-precision answers</li>
+              <li>Reduced hallucination through structured extraction and graph grounding</li>
+              <li>Scalable architecture for future regions and datasets</li>
+            </ul>
 
-    <p><strong>Technical Implementation:</strong></p>
-    <ul>
-      <li><strong>Data Sources:</strong> ReliefWeb API (UN OCHA) – PDFs and metadata for Ukraine and South Sudan</li>
-      <li><strong>Document Processing:</strong> Automated ingestion and text extraction using Docling</li>
-      <li><strong>NLP Pipeline:</strong> Context-preserving chunking with metadata-aware windowing</li>
-      <li><strong>LLM Extraction:</strong> Prompt-engineered triplet generation (subject–relation–object)</li>
-      <li><strong>Knowledge Graph:</strong> Neo4j graph with enriched nodes, edges, and properties</li>
-      <li><strong>RAG Architecture:</strong> Graph-based RAG using embeddings and vector similarity</li>
-      <li><strong>Backend:</strong> FastAPI for query orchestration, caching, and response generation</li>
-    </ul>
-
-    <p><strong>Key Features:</strong></p>
-    <ul>
-      <li>Natural language querying over humanitarian knowledge</li>
-      <li>Semantic + graph-based retrieval for high-precision answers</li>
-      <li>Reduced hallucination through structured extraction and graph grounding</li>
-      <li>Scalable architecture for future regions and datasets</li>
-    </ul>
-
-    <p><strong>Impact:</strong> Accelerated crisis intelligence by reducing manual document review, improving coordination, and enabling faster, data-driven humanitarian decision-making.</p>
-  </article>
-</section>
+            <p><strong>Impact:</strong> Accelerated crisis intelligence by reducing manual document review, improving coordination, and enabling faster, data-driven humanitarian decision-making.</p>
+          </article>
+        </section>
 
         <section>
           <article>
@@ -605,7 +516,7 @@ Proven ability to integrate LangChain, LlamaIndex, Hugging Face models, and clou
             </div>
 
             <p><strong>Overview:</strong> An intelligent web platform that predicts Air Quality Index (AQI) using machine learning, helping communities make informed decisions about outdoor activities and health precautions. Poor air quality contributes to respiratory diseases affecting millions worldwide.</p>
-            
+
             <p><strong>Technical Implementation:</strong></p>
             <ul>
               <li><strong>Dataset:</strong> EPA Air Quality System with 33+ environmental features</li>
@@ -614,7 +525,7 @@ Proven ability to integrate LangChain, LlamaIndex, Hugging Face models, and clou
               <li><strong>Pollutants Tracked:</strong> PM2.5, PM10, O₃ (Ozone), NO₂, SO₂, and CO</li>
               <li><strong>Tech Stack:</strong> Python, Scikit-learn, XGBoost, Flask/Django, JavaScript, Cloud Deployment</li>
             </ul>
-            
+
             <p><strong>Key Features:</strong></p>
             <ul>
               <li><strong>Real-time Predictions:</strong> Live AQI predictions with 7-day weather-integrated forecasts</li>
@@ -623,11 +534,12 @@ Proven ability to integrate LangChain, LlamaIndex, Hugging Face models, and clou
               <li><strong>Health Recommendations:</strong> Personalized suggestions based on current and predicted air quality levels</li>
               <li><strong>Model Insights:</strong> Professional dashboard displaying model performance metrics and comparison</li>
             </ul>
-            
+
             <p><strong>Impact:</strong> Deployed as a production-ready cloud-based solution providing actionable environmental health insights for community well-being and proactive health measures.</p>
           </article>
         </section>
       </section>
+
       <!-- ==================== POWER BI PROJECTS ==================== -->
       <section class="content-section tab" id="powerbi" style="display:none;">
         <section class="posts">
@@ -639,11 +551,11 @@ Proven ability to integrate LangChain, LlamaIndex, Hugging Face models, and clou
             <p><b>Throughput, Capacity & Barrels (2006–2020)</b></p>
             <a href="#" class="image fit"><img src="images/Dashboard 1.png" alt="Trans Mountain Dashboard 1" /></a>
             <p>This dashboard visualizes oil barrels produced vs. producible, pipeline throughput vs. capacity over time, and trade direction. It highlights declining throughput in recent years despite large remaining production potential. Sankey and bar charts show regional trade and annual throughput variations.</p>
-            
+
             <p><b>Apportionment for Pipelines</b></p>
             <a href="#" class="image fit"><img src="images/Dashboard 2.png" alt="Trans Mountain Dashboard 2" /></a>
             <p>Displays accepted vs. original oil shipment nominations across pipelines from 2006 to 2020. It shows which pipelines had the most apportionment and visualizes acceptance rates by year and line. Useful for understanding congestion and priority allocations in the network.</p>
-            
+
             <p><b>Product Throughput by Trade & Region</b></p>
             <a href="#" class="image fit"><img src="images/Dashboard 3.png" alt="Trans Mountain Dashboard 3" /></a>
             <p>This dashboard breaks down throughput (1000 m³/d) by oil product types and trade direction from 2006 to 2020. Users can interact using buttons to filter by trade types like IntraCanada, Import, or Export. It highlights how different types of oil dominate throughput, especially in regions.</p>
@@ -760,8 +672,6 @@ Proven ability to integrate LangChain, LlamaIndex, Hugging Face models, and clou
         </section>
       </section>
 
-   
-
       <!-- ==================== CONTACT ==================== -->
       <section class="split contact">
         <section class="alt">
@@ -794,7 +704,7 @@ Proven ability to integrate LangChain, LlamaIndex, Hugging Face models, and clou
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
-  
+
   <script>
     (function() {
       'use strict';
@@ -805,29 +715,24 @@ Proven ability to integrate LangChain, LlamaIndex, Hugging Face models, and clou
       const allSections = document.querySelectorAll('.content-section');
 
       function activateTab(target) {
-        // Update nav active state
         document.querySelectorAll('#nav .links li').forEach(li => li.classList.remove('active'));
         const activeNavLink = document.querySelector(`#nav [data-target="${target}"]`);
         if (activeNavLink) {
           activeNavLink.closest('li').classList.add('active');
         }
 
-        // Show/hide sections
         allSections.forEach(section => {
           section.style.display = section.id === target ? 'block' : 'none';
         });
 
-        // Close mobile nav panel if open
         document.body.classList.remove('is-navPanel-visible');
 
-        // Scroll to top of main content
         const mainEl = document.getElementById('main');
         if (mainEl) {
           mainEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }
 
-      // Bind click events to all tab triggers
       document.querySelectorAll('[data-target]').forEach(link => {
         link.addEventListener('click', function(e) {
           e.preventDefault();
@@ -848,13 +753,10 @@ Proven ability to integrate LangChain, LlamaIndex, Hugging Face models, and clou
         });
       }
 
-      // Initialize on page load
       window.addEventListener('load', initVideoAutoplay);
 
-      // Re-initialize video when AI/ML tab is shown
-      const originalActivateTab = activateTab;
       window.activateTab = function(target) {
-        originalActivateTab(target);
+        activateTab(target);
         if (target === 'aiml') {
           setTimeout(initVideoAutoplay, 100);
         }
