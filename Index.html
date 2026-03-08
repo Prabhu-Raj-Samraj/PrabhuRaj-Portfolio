@@ -202,42 +202,38 @@
       background: #333;
     }
 
-    /* ========================================
-       CAROUSEL 4: Knowledge Graph (2 slides)
-    ======================================== */
-    #carousel-kg .carousel {
-      height: clamp(280px, 45vw, 520px);
-      max-height: 520px;
-    }
+ /* ========================================
+   CAROUSEL 4: Knowledge Graph (2 slides)
+======================================== */
+#carousel-kg .carousel {
+  height: clamp(280px, 45vw, 520px);
+  max-height: 520px;
+  overflow: hidden;
+}
 
-    #carousel-kg #kg-2:checked ~ .carousel #kg-slide-2,
-    #carousel-kg #kg-3:checked ~ .carousel #kg-slide-3 {
-      opacity: 1;
-      z-index: 3;
-      transform: scale(1.1);
-      pointer-events: auto;
-    }
+/* Hide ALL kg slides by default */
+#carousel-kg .carousel label {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: scale(0.8) !important;
+  left: 12.5% !important;
+}
 
-    #carousel-kg #kg-2:checked ~ .carousel #kg-slide-3 {
-      left: 60%;
-      opacity: 0.6;
-      transform: scale(0.9);
-      z-index: 2;
-      pointer-events: auto;
-    }
+/* Show only the active slide - no neighbors visible */
+#carousel-kg #kg-2:checked ~ .carousel #kg-slide-2,
+#carousel-kg #kg-3:checked ~ .carousel #kg-slide-3 {
+  opacity: 1 !important;
+  z-index: 3 !important;
+  transform: scale(1) !important;
+  pointer-events: auto !important;
+  left: 12.5% !important;
+}
 
-    #carousel-kg #kg-3:checked ~ .carousel #kg-slide-2 {
-      left: -20%;
-      opacity: 0.6;
-      transform: scale(0.9);
-      z-index: 2;
-      pointer-events: auto;
-    }
-
-    #carousel-kg #kg-2:checked ~ .dots label[for="kg-2"],
-    #carousel-kg #kg-3:checked ~ .dots label[for="kg-3"] {
-      background: #333;
-    }
+/* Active dot */
+#carousel-kg #kg-2:checked ~ .dots label[for="kg-2"],
+#carousel-kg #kg-3:checked ~ .dots label[for="kg-3"] {
+  background: #333;
+}
 
     /* ========================================
        MOBILE RESPONSIVENESS
